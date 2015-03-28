@@ -79,19 +79,21 @@
     <div id="fullpage">
         <div class="section" id="section0">
             <div class="intro">
-                <h1>Spontraineous trip</h1>
+            	<div>Find me a</div>
+                <h1>spon<b>train</b>eous</h1>
+                <div>trip</div>
 		    <div class="container">
 			<form class="form-horizontal" role="form">
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="from">From:</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="from" placeholder="Enter departure station">
+			      <input type="text" class="form-control" id="from" placeholder="Departure station">
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="depart">Departing:</label>
 			    <div class="col-sm-10"> 
-			      <input type="date" min="2015-03-30" value="2015-03-30" class="form-control" id="depart" placeholder="Enter departure date">
+			      <input type="date" min="2015-03-30" value="2015-03-30" class="form-control" id="depart" placeholder="Departure date">
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -101,12 +103,18 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="max">Budget: £</label>
+			    <div class="col-sm-10"> 
+			      <input type="number" min="10" max="400" step="10" value="50" class="form-control" id="max" placeholder="Maximum cost per person">
+			    </div>
+			  </div>
+			  <div class="form-group">
 			    <div class="control-label col-sm-2">Travellers:</div>
 			    <div class="form-horizontal col-sm-10"> 
 				    <label class="control-label" for="adults">adult:</label>
 				    <input type="number" min="1" max="5" step="1" value="1" class="form-control" id="adults" placeholder="Number of adults">
 				    <label class="control-label" for="children">child:</label>
-				    <input type="number" min="1" max="5" step="1" value="1" class="form-control" id="adults" placeholder="Number of children">
+				    <input type="number" min="0" max="8" step="1" value="0" class="form-control" id="children" placeholder="Number of children">
 			    </div>
 			  </div>
 			  <div class="form-group"> 
