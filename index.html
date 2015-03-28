@@ -14,20 +14,24 @@
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
     <style>
     /* Style for our header texts
-	* --------------------------------------- */
+    * --------------------------------------- */
     
-    #slide2 {
+    #slide1 {
         background-image: url('img/london.jpg') !important;
     }
-
-	#slide3 {
-        background-image: url('img/chester.jpg') !important;
+    
+    #slide2 {
+        background-image: url('img/chester.png') !important;
+    }
+    
+    #slide3 {
+        background-image: url('img/brighton.jpg') !important;
     }
     
     h1 {
         font-size: 5em;
         font-family: arial, helvetica;
-		text-shadow: 2px 2px #000;
+        text-shadow: 2px 2px #000;
         color: #fff;
         margin: 0;
     }
@@ -36,22 +40,26 @@
         color: #fff;
     }
     /* Centered texts in each section
-	* --------------------------------------- */
+    * --------------------------------------- */
     
     .section {
         text-align: center;
     }
     /* Overwriting styles for the navigation dots (to place it where we want)
-	* --------------------------------------- */
+    * --------------------------------------- */
     
     .fp-slidesNav.bottom {
         bottom: 25px;
     }
     /* Bottom menu
-	* --------------------------------------- */
+    * --------------------------------------- */
     
     #infoMenu li a {
         color: #fff;
+    }
+    
+    .cost {
+        color: red;
     }
     </style>
     <!--[if IE]>
@@ -80,7 +88,7 @@
     <div id="fullpage">
         <div class="section" id="section0">
             <div class="intro">
-            	<div>Find me a</div>
+                <div>Find me a</div>
                 <h1>spon<b>train</b>eous</h1>
                 <div>trip</div>
 		    <div class="container">
@@ -168,24 +176,19 @@
         </div>
         <div class="section" id="section2">
             <div class="slide" id="slide1" data-anchor="slide1">
-                <div class="intro">
-                    <h1>Results </h1>
-                    <p>
-                        Let's swipe!
-                    </p>
-                </div>
+                <h1 class="cost">GBP 49</h1>
+                <h1 class="destination">London</h1>
+                <h2 class="via">via Sheffield</h2>
             </div>
             <div class="slide" id="slide2" data-anchor="slide2">
-                <h1>London</h1>
+                <h1 class="cost">GBP 39</h1>
+                <h1 class="destination">Chester</h1>
+                <h2 class="via">via Sheffield</h2>
             </div>
             <div class="slide" id="slide3" data-anchor="slide3">
-                <h1>Chester</h1>
-            </div>
-            <div class="slide" id="slide4" data-anchor="slide4">
-                <h1>Brighton</h1>
-            </div>
-            <div class="slide" id="slide5" data-anchor="slide5">
-                <h1>Option 5</h1>
+                <h1 class="cost">GBP 69</h1>
+                <h1 class="destination">Brighton</h1>
+                <h2 class="via">via Sheffield</h2>
             </div>
         </div>
         <div class="section" id="section3">
