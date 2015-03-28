@@ -27,7 +27,7 @@
     #slide3 {
         background-image: url('img/brighton.jpg') !important;
     }
-
+    
     h1 {
         font-size: 5em;
         font-family: arial, helvetica;
@@ -85,75 +85,90 @@
 
 <body>
     <div id="fullpage">
-        <div class="section" id="section0">
+        <!--         <div class="section" id="section0">
             <div class="intro">
-            	<div>Find me a</div>
+                <div>Find me a</div>
                 <h1>spon<b>train</b>eous</h1>
                 <div>trip</div>
-		    <div class="container">
-			<form class="form-horizontal" role="form" action="#results">
-			  <div class="form-group">
-			    <label class="control-label col-xs-2" for="from">From:</label>
-			    <div class="col-xs-10">
-			      <input type="text" class="form-control" id="from" placeholder="Departure station">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label class="control-label col-xs-2" for="depart">Departing:</label>
-			    <div class="col-xs-10"> 
-			      <input type="date" min="2015-03-30" value="2015-03-30" class="form-control" id="depart" placeholder="Departure date">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label class="control-label col-xs-2" for="days">No. of days:</label>
-			    <div class="col-xs-10"> 
-			      <input type="number" min="1" max="5" step="1" value="1" class="form-control" id="days" placeholder="Length of trip in days">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label class="control-label col-xs-2" for="max">Budget: £</label>
-			    <div class="col-xs-10"> 
-			      <input type="number" min="10" max="400" step="10" value="50" class="form-control" id="max" placeholder="Maximum cost per person">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="control-label col-xs-2">Travellers:</div>
-				<div class="travellers-section col-xs-10 form-group" data-bind="css: { &quot;has-error&quot;: travellersInvalid }">
-	                <div class="pull-left adults-field">
-	                    <label class="control-label" for="adults">Adults (16+)</label>
-	                    <select class="form-control" id="adults" data-bind="options: adultsOptions, optionsText: 'text', optionsValue: 'value', value: adults"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
-	                    </select>
-	                </div>
-	                <div class="pull-left">
-	                	&nbsp;
-	                </div>
-	                <div class="pull-left children-field">
-	                   <label class="control-label" for="children" title="Up to 2 children under the age of 5 can travel free with each fare paying passenger." data-toggle="popover" data-placement="right">Child (5-15)</label>
-	                    <select class="form-control" id="children" name="ChildrenTravelling" data-bind="options: childrenOptions, optionsText: 'text', optionsValue: 'value', value: children"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
-	                    </select>
-	                </div>
-	 			  <div class="pull-left form-group">        
-				      <div class="col-xs-offset-2 col-xs-10">
-				        <div class="checkbox">
-				          <label><input type="checkbox"> with bikes</label>
-				        </div>
-				      </div>
-			  </div>
-               <div class="field-error animated bounceIn" data-bind="visible: travellersInvalid, validationMessage: travellers" style="display: none"></div>
-              </div>
-
-
-
-
-			  <div class="form-group"> 
-			    <div class="col-xs-offset-2 col-xs-10">
-			      <button type="submit" class="btn btn-default">Find trips</button>
-			    </div>
-			  </div>
-			</form>
-			</div>
-            </div>
-        </div>
+                <div class="container">
+                    <form class="form-horizontal" role="form" action="#results">
+                        <div class="form-group">
+                            <label class="control-label col-xs-2" for="from">From:</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="from" placeholder="Departure station">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2" for="depart">Departing:</label>
+                            <div class="col-xs-10">
+                                <input type="date" min="2015-03-30" value="2015-03-30" class="form-control" id="depart" placeholder="Departure date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2" for="days">No. of days:</label>
+                            <div class="col-xs-10">
+                                <input type="number" min="1" max="5" step="1" value="1" class="form-control" id="days" placeholder="Length of trip in days">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2" for="max">Budget: £</label>
+                            <div class="col-xs-10">
+                                <input type="number" min="10" max="400" step="10" value="50" class="form-control" id="max" placeholder="Maximum cost per person">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label col-xs-2">Travellers:</div>
+                            <div class="travellers-section col-xs-10 form-group" data-bind="css: { &quot;has-error&quot;: travellersInvalid }">
+                                <div class="pull-left adults-field">
+                                    <label class="control-label" for="adults">Adults (16+)</label>
+                                    <select class="form-control" id="adults" data-bind="options: adultsOptions, optionsText: 'text', optionsValue: 'value', value: adults">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </div>
+                                <div class="pull-left">
+                                    &nbsp;
+                                </div>
+                                <div class="pull-left children-field">
+                                    <label class="control-label" for="children" title="Up to 2 children under the age of 5 can travel free with each fare paying passenger." data-toggle="popover" data-placement="right">Child (5-15)</label>
+                                    <select class="form-control" id="children" name="ChildrenTravelling" data-bind="options: childrenOptions, optionsText: 'text', optionsValue: 'value', value: children">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </div>
+                                <div class="pull-left form-group">
+                                    <div class="col-xs-offset-2 col-xs-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> with bikes</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field-error animated bounceIn" data-bind="visible: travellersInvalid, validationMessage: travellers" style="display: none"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-offset-2 col-xs-10">
+                                    <button type="submit" class="btn btn-default">Find trips</button>
+                                </div>
+                            </div>
+                    </form>
+                    </div>
+                </div>
+            </div> -->
         <div class="section" id="section1">
             <div class="intro">
                 <h1>Choices here</h1>
