@@ -69,12 +69,78 @@
     .cost {
         color: red;
     }
-
+    
     .cityTable {
         align: center;
         display: table;
         margin: 0 auto;
         padding-bottom: 40px;
+    }
+    
+    .rating label {
+        text-indent: -100px;
+        width: 40px !important;
+        height: 30px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    .label {
+        float: left;
+        padding-top: 3px;
+    }
+    
+    input[type="radio"] {
+        padding-right: 4px;
+        position: absolute;
+        left: 340px;
+        margin-top: 10px;
+    }
+    
+    input[type="radio"],
+    .rating label.stars {
+        float: right;
+        line-height: 30px;
+        height: 30px;
+    }
+    
+    span + input[type=radio] + label,
+    legend + input[type=radio] + label {
+        clear: right;
+        margin-right: 80px;
+        counter-reset: checkbox;
+    }
+    
+    .rating input[type="radio"]:required + label:after {
+        visibility: false;
+        content: '';
+        position: absolute;
+        left: 340px;
+        min-height: 10px;
+        margin-top: -36px;
+        text-align: right;
+        padding: 10px 10px;
+        display: block;
+        width: 50px;
+    }
+    
+    .rating label.stars {
+        background: transparent url('img/star_off.png') no-repeat center center;
+    }
+    
+    .rating label.stars:hover ~ label.stars,
+    .rating label.stars:hover,
+    .rating input[type=radio][name=stars]:checked ~ label.stars {
+        background-image: url('img/star.png');
+        counter-increment: checkbox;
+    }
+    
+    .rating input[type=radio][name=stars]:required + label.stars:after {
+        content: counter(checkbox) " stars!";
+    }
+    
+    .blurb {
+        visibility: hidden;
     }
     </style>
     <!--[if IE]>
@@ -258,11 +324,11 @@
                         <tbody>
                             <tr>
                                 <td>York</td>
-                                <td>5.15</td>                                
+                                <td>5.15</td>
                             </tr>
                             <tr>
                                 <td>Sheffield</td>
-                                <td>6.15</td>                                
+                                <td>6.15</td>
                             </tr>
                         </tbody>
                     </table>
@@ -279,11 +345,11 @@
                         <tbody>
                             <tr>
                                 <td>Sheffield</td>
-                                <td>6.45</td>                                
+                                <td>6.45</td>
                             </tr>
                             <tr>
                                 <td>London</td>
-                                <td>8.15</td>                                
+                                <td>8.15</td>
                             </tr>
                         </tbody>
                     </table>
@@ -292,7 +358,52 @@
         </div>
         <div class="section" id="section5">
             <div class="intro">
-                <h1>Feedback</h1>
+                <h2>Feedback</h2>
+                <div class="col-md-12">
+                    <p>How was your overall experience:</p>
+                    <fieldset class="rating">
+                        <input type="radio" name="stars" class="blurb" id="5_stars" value="5">
+                        <label class="stars" for="5_stars">5 stars</label>
+                        <input type="radio" name="stars" id="4_stars" class="blurb" value="4">
+                        <label class="stars" for="4_stars">4 stars</label>
+                        <input type="radio" name="stars" id="3_stars" class="blurb" value="3">
+                        <label class="stars" for="3_stars">3 stars</label>
+                        <input type="radio" name="stars" id="2_stars" class="blurb" value="2">
+                        <label class="stars" for="3_stars">2 stars</label>
+                        <input type="radio" name="stars" id="1_stars" class="blurb" value="1">
+                        <label class="stars" for="2_stars">1 star</label>
+                    </fieldset>
+                </div>
+                <div class="col-md-12">
+                    <p>How was your in-app experience?</p>
+                    <fieldset class="rating">
+                        <input type="radio" name="stars" class="blurb" id="5_stars" value="5">
+                        <label class="stars" for="5_stars">5 stars</label>
+                        <input type="radio" name="stars" id="4_stars" class="blurb" value="4">
+                        <label class="stars" for="4_stars">4 stars</label>
+                        <input type="radio" name="stars" id="3_stars" class="blurb" value="3">
+                        <label class="stars" for="3_stars">3 stars</label>
+                        <input type="radio" name="stars" id="2_stars" class="blurb" value="2">
+                        <label class="stars" for="3_stars">2 stars</label>
+                        <input type="radio" name="stars" id="1_stars" class="blurb" value="1">
+                        <label class="stars" for="2_stars">1 star</label>
+                    </fieldset>
+                </div>
+                <div class="col-md-12">
+                    <p>How was your train journey?</p>
+                    <fieldset class="rating">
+                        <input type="radio" name="stars" class="blurb" id="5_stars" value="5">
+                        <label class="stars" for="5_stars">5 stars</label>
+                        <input type="radio" name="stars" id="4_stars" class="blurb" value="4">
+                        <label class="stars" for="4_stars">4 stars</label>
+                        <input type="radio" name="stars" id="3_stars" class="blurb" value="3">
+                        <label class="stars" for="3_stars">3 stars</label>
+                        <input type="radio" name="stars" id="2_stars" class="blurb" value="2">
+                        <label class="stars" for="3_stars">2 stars</label>
+                        <input type="radio" name="stars" id="1_stars" class="blurb" value="1">
+                        <label class="stars" for="2_stars">1 star</label>
+                    </fieldset>
+                </div>
             </div>
         </div>
     </div>
