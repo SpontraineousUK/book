@@ -10,13 +10,19 @@
     <meta name="Resource-type" content="Document" />
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="css/examples.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
     <style>
     /* Style for our header texts
 	* --------------------------------------- */
     
+    #slide2 {
+        background-image: url('img/london.jpg') !important;
+    }
+    
     h1 {
         font-size: 5em;
         font-family: arial, helvetica;
+		text-shadow: 2px 2px #000;
         color: #fff;
         margin: 0;
     }
@@ -42,10 +48,6 @@
     #infoMenu li a {
         color: #fff;
     }
-    
-    #section2 h1 {
-        color: #333;
-    }
     </style>
     <!--[if IE]>
 		<script type="text/javascript">
@@ -60,7 +62,7 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $('#fullpage').fullpage({
-            anchors: ['form', 'choices', 'results', 'booking', 'journey' ,'feedback'],
+            anchors: ['form', 'choices', 'results', 'booking', 'journey', 'feedback'],
             sectionsColor: ['#8FB98B', '#DE564B', '#EAE1C0', '#8FB98B', '#DE564B', '#EAE1C0'],
             slidesNavigation: true,
         });
