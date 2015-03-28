@@ -3,11 +3,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Blaah</title>
-    <meta name="author" content="Alvaro Trigo Lopez" />
-    <meta name="description" content="fullPage full-screen sliders navigation widh dots." />
-    <meta name="keywords" content="fullpage,jquery,demo,screen,fullscreen,sliders navigation, horizontal navigation,horizontal,navigation,dots" />
-    <meta name="Resource-type" content="Document" />
+    <title>Spontraineous</title>
+    <meta name="author" content="#HackTheRails" />
+    <meta name="description" content="Last-minute short break deals by train" />
+    <meta name="keywords" content="train,hotel,deals,last-minute,leisure,city,countryside,seaside,break" />
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="css/examples.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -136,12 +135,16 @@
     
     .rating label.stars:hover ~ label.stars,
     .rating label.stars:hover,
-    .rating input[type=radio][name=stars]:checked ~ label.stars {
+    .rating input[type=radio][name=overall]:checked ~ label.stars,
+    .rating input[type=radio][name=destination]:checked ~ label.stars,
+    .rating input[type=radio][name=rail]:checked ~ label.stars {
         background-image: url('img/star.png');
         counter-increment: checkbox;
     }
     
-    .rating input[type=radio][name=stars]:required + label.stars:after {
+    .rating input[type=radio][name=overall]:required + label.stars:after,
+    .rating input[type=radio][name=destination]:required + label.stars:after,
+    .rating input[type=radio][name=rail]:required + label.stars:after {
         content: counter(checkbox) " stars!";
     }
     
@@ -396,45 +399,45 @@
                 <div class="col-md-12">
                     <p>How was your overall experience:</p>
                     <fieldset class="rating">
-                        <input type="radio" name="stars" class="blurb" id="5_stars" value="5">
+                        <input type="radio" name="overall" class="blurb" id="5_stars" value="5">
                         <label class="stars" for="5_stars">5 stars</label>
-                        <input type="radio" name="stars" id="4_stars" class="blurb" value="4">
+                        <input type="radio" name="overall" id="4_stars" class="blurb" value="4">
                         <label class="stars" for="4_stars">4 stars</label>
-                        <input type="radio" name="stars" id="3_stars" class="blurb" value="3">
+                        <input type="radio" name="overall" id="3_stars" class="blurb" value="3">
                         <label class="stars" for="3_stars">3 stars</label>
-                        <input type="radio" name="stars" id="2_stars" class="blurb" value="2">
+                        <input type="radio" name="overall" id="2_stars" class="blurb" value="2">
                         <label class="stars" for="3_stars">2 stars</label>
-                        <input type="radio" name="stars" id="1_stars" class="blurb" value="1">
+                        <input type="radio" name="overall" id="1_stars" class="blurb" value="1">
                         <label class="stars" for="2_stars">1 star</label>
                     </fieldset>
                 </div>
                 <div class="col-md-12">
-                    <p>How was your in-app experience?</p>
+                    <p>How was your holiday experience?</p>
                     <fieldset class="rating">
-                        <input type="radio" name="stars" class="blurb" id="5_stars" value="5">
+                        <input type="radio" name="destination" class="blurb" id="5_stars" value="5">
                         <label class="stars" for="5_stars">5 stars</label>
-                        <input type="radio" name="stars" id="4_stars" class="blurb" value="4">
+                        <input type="radio" name="destination" id="4_stars" class="blurb" value="4">
                         <label class="stars" for="4_stars">4 stars</label>
-                        <input type="radio" name="stars" id="3_stars" class="blurb" value="3">
+                        <input type="radio" name="destination" id="3_stars" class="blurb" value="3">
                         <label class="stars" for="3_stars">3 stars</label>
-                        <input type="radio" name="stars" id="2_stars" class="blurb" value="2">
+                        <input type="radio" name="destination" id="2_stars" class="blurb" value="2">
                         <label class="stars" for="3_stars">2 stars</label>
-                        <input type="radio" name="stars" id="1_stars" class="blurb" value="1">
+                        <input type="radio" name="destination" id="1_stars" class="blurb" value="1">
                         <label class="stars" for="2_stars">1 star</label>
                     </fieldset>
                 </div>
                 <div class="col-md-12">
                     <p>How was your train journey?</p>
                     <fieldset class="rating">
-                        <input type="radio" name="stars" class="blurb" id="5_stars" value="5">
+                        <input type="radio" name="rail" class="blurb" id="5_stars" value="5">
                         <label class="stars" for="5_stars">5 stars</label>
-                        <input type="radio" name="stars" id="4_stars" class="blurb" value="4">
+                        <input type="radio" name="rail" id="4_stars" class="blurb" value="4">
                         <label class="stars" for="4_stars">4 stars</label>
-                        <input type="radio" name="stars" id="3_stars" class="blurb" value="3">
+                        <input type="radio" name="rail" id="3_stars" class="blurb" value="3">
                         <label class="stars" for="3_stars">3 stars</label>
-                        <input type="radio" name="stars" id="2_stars" class="blurb" value="2">
+                        <input type="radio" name="rail" id="2_stars" class="blurb" value="2">
                         <label class="stars" for="3_stars">2 stars</label>
-                        <input type="radio" name="stars" id="1_stars" class="blurb" value="1">
+                        <input type="radio" name="rail" id="1_stars" class="blurb" value="1">
                         <label class="stars" for="2_stars">1 star</label>
                     </fieldset>
                 </div>
