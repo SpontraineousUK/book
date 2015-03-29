@@ -81,73 +81,63 @@
         margin: 0 auto;
         padding-bottom: 40px;
     }
-    
-    .rating label {
-        text-indent: -100px;
-        width: 40px !important;
-        height: 30px;
-        overflow: hidden;
-        cursor: pointer;
-    }
-    
-    .label {
-        float: left;
-        padding-top: 3px;
-    }
-    
-    input[type="radio"] {
-        padding-right: 4px;
-        position: absolute;
-        left: 340px;
-        margin-top: 10px;
-    }
-    
-    input[type="radio"],
-    .rating label.stars {
-        float: right;
-        line-height: 30px;
-        height: 30px;
-    }
-    
-    span + input[type=radio] + label,
-    legend + input[type=radio] + label {
-        clear: right;
-        margin-right: 80px;
-        counter-reset: checkbox;
-    }
-    
-    .rating input[type="radio"]:required + label:after {
-        visibility: false;
-        content: '';
-        position: absolute;
-        left: 340px;
-        min-height: 10px;
-        margin-top: -36px;
-        text-align: right;
-        padding: 10px 10px;
-        display: block;
-        width: 50px;
-    }
-    
-    .rating label.stars {
-        background: transparent url('img/star_off.png') no-repeat center center;
-    }
-    
-    .rating label.stars:hover ~ label.stars,
-    .rating label.stars:hover,
-    .rating input[type=radio][name=overall]:checked ~ label.stars,
-    .rating input[type=radio][name=destination]:checked ~ label.stars,
-    .rating input[type=radio][name=rail]:checked ~ label.stars {
-        background-image: url('img/star.png');
-        counter-increment: checkbox;
-    }
-    
-    .rating input[type=radio][name=overall]:required + label.stars:after,
-    .rating input[type=radio][name=destination]:required + label.stars:after,
-    .rating input[type=radio][name=rail]:required + label.stars:after {
-        content: counter(checkbox) " stars!";
-    }
-    
+
+	.rating {
+	    float:left;
+	}
+
+	/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+	   follow these rules. Every browser that supports :checked also supports :not(), so
+	   it doesn’t make the test unnecessarily selective */
+	.rating:not(:checked) > input {
+	    position:absolute;
+	    top:-9999px;
+	    clip:rect(0,0,0,0);
+	}
+
+	.rating:not(:checked) > label {
+	    float:right;
+	    width:1em;
+	    padding:0 .1em;
+	    overflow:hidden;
+	    white-space:nowrap;
+	    cursor:pointer;
+	    font-size:200%;
+	    line-height:1.2;
+	    color:#ddd;
+	    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+	}
+
+	.rating:not(:checked) > label:before {
+	    content: '★ ';
+	}
+
+	.rating > input:checked ~ label {
+	    color: #f70;
+	    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+	}
+
+	.rating:not(:checked) > label:hover,
+	.rating:not(:checked) > label:hover ~ label {
+	    color: gold;
+	    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+	}
+
+	.rating > input:checked + label:hover,
+	.rating > input:checked + label:hover ~ label,
+	.rating > input:checked ~ label:hover,
+	.rating > input:checked ~ label:hover ~ label,
+	.rating > label:hover ~ input:checked ~ label {
+	    color: #ea0;
+	    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+	}
+
+	.rating > label:active {
+	    position:relative;
+	    top:2px;
+	    left:2px;
+	}
+       
     .blurb, #overnight {
         visibility: hidden;
     }
@@ -404,51 +394,34 @@
         <div class="section" id="section5">
             <div class="intro">
                 <h2>Feedback</h2>
-                <div class="col-md-12">
-                    <p>How was your overall experience:</p>
-                    <fieldset class="rating">
-                        <input type="radio" name="overall" class="blurb" id="5_stars" value="5">
-                        <label class="stars" for="5_stars">5 stars</label>
-                        <input type="radio" name="overall" id="4_stars" class="blurb" value="4">
-                        <label class="stars" for="4_stars">4 stars</label>
-                        <input type="radio" name="overall" id="3_stars" class="blurb" value="3">
-                        <label class="stars" for="3_stars">3 stars</label>
-                        <input type="radio" name="overall" id="2_stars" class="blurb" value="2">
-                        <label class="stars" for="3_stars">2 stars</label>
-                        <input type="radio" name="overall" id="1_stars" class="blurb" value="1">
-                        <label class="stars" for="2_stars">1 star</label>
-                    </fieldset>
-                </div>
-                <div class="col-md-12">
-                    <p>How was your holiday experience?</p>
-                    <fieldset class="rating">
-                        <input type="radio" name="destination" class="blurb" id="5_stars" value="5">
-                        <label class="stars" for="5_stars">5 stars</label>
-                        <input type="radio" name="destination" id="4_stars" class="blurb" value="4">
-                        <label class="stars" for="4_stars">4 stars</label>
-                        <input type="radio" name="destination" id="3_stars" class="blurb" value="3">
-                        <label class="stars" for="3_stars">3 stars</label>
-                        <input type="radio" name="destination" id="2_stars" class="blurb" value="2">
-                        <label class="stars" for="3_stars">2 stars</label>
-                        <input type="radio" name="destination" id="1_stars" class="blurb" value="1">
-                        <label class="stars" for="2_stars">1 star</label>
-                    </fieldset>
-                </div>
-                <div class="col-md-12">
-                    <p>How was your train journey?</p>
-                    <fieldset class="rating">
-                        <input type="radio" name="rail" class="blurb" id="5_stars" value="5">
-                        <label class="stars" for="5_stars">5 stars</label>
-                        <input type="radio" name="rail" id="4_stars" class="blurb" value="4">
-                        <label class="stars" for="4_stars">4 stars</label>
-                        <input type="radio" name="rail" id="3_stars" class="blurb" value="3">
-                        <label class="stars" for="3_stars">3 stars</label>
-                        <input type="radio" name="rail" id="2_stars" class="blurb" value="2">
-                        <label class="stars" for="3_stars">2 stars</label>
-                        <input type="radio" name="rail" id="1_stars" class="blurb" value="1">
-                        <label class="stars" for="2_stars">1 star</label>
-                    </fieldset>
-                </div>
+				<fieldset class="rating col-xs-3">
+				    <legend>Train timeliness:</legend>
+				    <input type="radio" id="star5" name="travel" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+				    <input type="radio" id="star4" name="travel" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+				    <input type="radio" id="star3" name="travel" value="3" /><label for="star3" title="Meh">3 stars</label>
+				    <input type="radio" id="star2" name="travel" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+				    <input type="radio" id="star1" name="travel" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+				</fieldset>
+				<div class="col-xs-1"></div>
+
+				<fieldset class="rating col-xs-3">
+				    <legend>Rail service:</legend>
+				    <input type="radio" id="star5" name="service" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+				    <input type="radio" id="star4" name="service" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+				    <input type="radio" id="star3" name="service" value="3" /><label for="star3" title="Meh">3 stars</label>
+				    <input type="radio" id="star2" name="service" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+				    <input type="radio" id="star1" name="service" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+				</fieldset>
+				<div class="col-xs-1"></div>
+
+				<fieldset class="rating col-xs-3">
+				    <legend>Holiday destination:</legend>
+				    <input type="radio" id="star5" name="destination" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+				    <input type="radio" id="star4" name="destination" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+				    <input type="radio" id="star3" name="destination" value="3" /><label for="star3" title="Meh">3 stars</label>
+				    <input type="radio" id="star2" name="destination" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+				    <input type="radio" id="star1" name="destination" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+				</fieldset>
             </div>
         </div>
     </div>
