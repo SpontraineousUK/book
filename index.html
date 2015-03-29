@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/examples.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <style>
     /* Style for our header texts
     * --------------------------------------- */
@@ -181,6 +182,8 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!--    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 -->
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
     <script type="text/javascript" src="js/examples.js"></script>
@@ -233,78 +236,29 @@
                                 <input type="date" min="2015-03-30" value="2015-03-30" class="form-control" id="depart" placeholder="Departure date">
                             </div>
                         </div>
-                        <div class="form-group">
+                       <!--  <div class="form-group">
                             <label class="control-label col-xs-2" for="days">No. of days:</label>
                             <div class="col-xs-10 pull-left">
-                                <select class="form-control" id="days" data-bind="options: adultsOptions, optionsText: 'text', optionsValue: 'value', value: adults">
-                                    <option selected value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                                <!-- <div class="pull-left" id="overnight">
-                                    <div class="col-xs-offset-2">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input name="overnight" selected type="checkbox"> include hotel</label>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                <input type="range" name="points" id="points" value="1" min="1" max="10">
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label class="control-label col-xs-2" for="max">Budget:</label>
                             <div class="col-xs-10 pull-left">
-                                <select class="form-control" id="max" data-bind="options: childrenOptions, optionsText: 'text', optionsValue: 'value', value: children">
-                                    <option value="20">£20/head</option>
-                                    <option value="30">£30/head</option>
-                                    <option value="40">£40/head</option>
-                                    <option selected value="50">£50/head</option>
-                                    <option value="60">£60/head</option>
-                                    <option value="80">£80/head</option>
-                                    <option value="100">£100/head</option>
-                                    <option value="125">£125/head</option>
-                                    <option value="150">£150/head</option>
-                                </select>
+                                <input type="range" name="points" id="points" value="50" min="0" max="100">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-2">Travellers:</label>
-                            <div class="travellers-section col-xs-10 pull-left adults-field" data-bind="css: { &quot;has-error&quot;: travellersInvalid }">
-                                <select class="form-control" id="adults" data-bind="options: adultsOptions, optionsText: 'text', optionsValue: 'value', value: adults">
-                                    <option selected value="nan">Adults (16+)</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                </select>
-                                <label class="control-label" for="children" title="Up to 2 children under the age of 5 can travel free with each fare paying passenger." data-toggle="popover" data-placement="right"></label>
-                                <select class="form-control" id="children" name="ChildrenTravelling" data-bind="options: childrenOptions, optionsText: 'text', optionsValue: 'value', value: children">
-                                    <option selected value="nan">Child (5-15)</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                </select>
-                                <div class="pull-right">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="bike" type="checkbox"> with bikes</label>
-                                    </div>
-                                </div>
+                            <label class="control-label col-xs-2">Adults:</label>
+                            <div class="col-xs-10 pull-left">
+                                <input type="range" name="points" id="points" value="1" min="0" max="10">
                             </div>
-                            <div class="field-error animated bounceIn" data-bind="visible: travellersInvalid, validationMessage: travellers" style="display: none"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2">Child (5-15):</label>
+                            <div class="col-xs-10 pull-left">
+                                <input type="range" name="points" id="points" value="1" min="0" max="10">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-xs-2" for="max">Prefer:</label>
