@@ -272,21 +272,9 @@
                         <div class="form-group">
                             <label class="control-label col-xs-2">Travellers:</label>
                             <div class="travellers-section col-xs-10 pull-left adults-field" data-bind="css: { &quot;has-error&quot;: travellersInvalid }">
-                                <label class="control-label" for="adults">Adults (16+)</label>
                                 <select class="form-control" id="adults" data-bind="options: adultsOptions, optionsText: 'text', optionsValue: 'value', value: adults">
+                                    <option selected value="nan">Adults (16+)</option>
                                     <option value="0">0</option>
-                                    <option selected value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                </select>
-                                <label class="control-label" for="children" title="Up to 2 children under the age of 5 can travel free with each fare paying passenger." data-toggle="popover" data-placement="right">Child (5-15)</label>
-                                <select class="form-control" id="children" name="ChildrenTravelling" data-bind="options: childrenOptions, optionsText: 'text', optionsValue: 'value', value: children">
-                                    <option selected value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -296,17 +284,23 @@
                                     <option value="7">7</option>
                                     <option value="8">8</option>
                                 </select>
-                                <div class="pull-left">
-                                    &nbsp;
-                                </div>
-                                <div class="pull-left children-field">
-                                </div>
-                                <div class="pull-left">
-                                    <div class="col-xs-offset-2">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input name="bike" type="checkbox"> with bikes</label>
-                                        </div>
+                                <label class="control-label" for="children" title="Up to 2 children under the age of 5 can travel free with each fare paying passenger." data-toggle="popover" data-placement="right"></label>
+                                <select class="form-control" id="children" name="ChildrenTravelling" data-bind="options: childrenOptions, optionsText: 'text', optionsValue: 'value', value: children">
+                                    <option selected value="nan">Child (5-15)</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                                <div class="pull-right">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="bike" type="checkbox"> with bikes</label>
                                     </div>
                                 </div>
                             </div>
