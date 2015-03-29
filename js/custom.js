@@ -22,6 +22,10 @@ $(document).ready(function() {
     function initialize() {
         var york = new google.maps.LatLng(53.962290800000000000, -1.081899499999963100);
         var london = new google.maps.LatLng(51.5072, 0.1275);
+        var duncraig = new google.maps.LatLng(57.3371, -5.6369);
+        var chester = new google.maps.LatLng(53.190, 2.891);
+        var sugarloaf = new google.maps.LatLng(51.8645, -3.0575);
+        var brighton = new google.maps.LatLng(50.842, 0.131);
 
         var mapOptions = {
             zoom: 6,
@@ -40,6 +44,31 @@ $(document).ready(function() {
             map: map,
             title: 'Hello World!'
         });
+
+        var third = new google.maps.Marker({
+            position: duncraig,
+            map: map,
+            title: 'Hello World!'
+        });
+
+        // var forth = new google.maps.Marker({
+        //     position: chester,
+        //     map: map,
+        //     title: 'Hello World!'
+        // });
+
+        var fifth = new google.maps.Marker({
+            position: sugarloaf,
+            map: map,
+            title: 'Hello World!'
+        });
+
+        var sixth = new google.maps.Marker({
+            position: brighton,
+            map: map,
+            title: 'Hello World!'
+        });
+
     }
 
     google.maps.event.addDomListener(window, 'load', initialize)
