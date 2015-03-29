@@ -148,7 +148,8 @@
         content: counter(checkbox) " stars!";
     }
     
-    .blurb, #overnight {
+    .blurb,
+    #overnight {
         visibility: hidden;
     }
     
@@ -156,6 +157,18 @@
         height: 100%;
         margin: 0px;
         padding: 0px
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    
+    .myTable {
+        width: 100%;
+        text-align: left;
     }
     </style>
     <!--[if IE]>
@@ -361,42 +374,44 @@
                     <img src="img/qrcode.jpg" />
                 </div>
                 <div class="col-md-6 cityTable">
-                    <table>
-                        <thead>
-                            <td>City</td>
-                            <td>Time</tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>York</td>
-                                <td>5.15</td>
-                            </tr>
-                            <tr>
-                                <td>Sheffield</td>
-                                <td>6.15</td>
-                            </tr>
-                        </tbody>
+                    <h4>From York to Sheffield</h4>
+                    <table class="myTable">
+                        <tr>
+                            <td>Time</td>
+                            <td>16:45</td>
+                        </tr>
+                        <tr>
+                            <td>Seat #</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>Platform</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>Warning</td>
+                            <td><img src="img/warning.png"> Delayed by 30 minutes</td>
+                        </tr>
                     </table>
                 </div>
                 <div class="col-md-6">
                     <img src="img/qrcode.jpg" />
                 </div>
                 <div class="col-md-6 cityTable">
-                    <table>
-                        <thead>
-                            <td>City</td>
-                            <td>Time</tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Sheffield</td>
-                                <td>6.45</td>
-                            </tr>
-                            <tr>
-                                <td>London</td>
-                                <td>8.15</td>
-                            </tr>
-                        </tbody>
+                    <h4>From Sheffield to London</h4>
+                    <table class="myTable">
+                        <tr>
+                            <td>Time</td>
+                            <td>18:15</td>
+                        </tr>
+                        <tr>
+                            <td>Seat #</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Platform</td>
+                            <td>2</td>
+                        </tr>
                     </table>
                 </div>
             </div>
