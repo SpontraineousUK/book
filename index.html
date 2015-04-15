@@ -83,6 +83,11 @@
     #infoMenu li a {
         color: #fff;
     }
+
+    .logo {
+        font: italic 200% arial, helvetica;
+        padding: 0 !important;
+    }
     
     .cost {
         color: red;
@@ -208,7 +213,7 @@
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
     <script type="text/javascript" src="js/examples.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
     <script type="text/javascript">
     function initialize() {
         var york = new google.maps.LatLng(53.962290800000000000, -1.081899499999963100);
@@ -223,13 +228,13 @@
         var first = new google.maps.Marker({
             position: york,
             map: map,
-            title: 'Hello World!'
+            title: 'York'
         });
 
         var second = new google.maps.Marker({
             position: london,
             map: map,
-            title: 'Hello World!'
+            title: 'London £49'
         });
     }
 
@@ -241,43 +246,57 @@
     <div id="fullpage">
         <div class="section firstPage" id="section0">
             <div class="intro">
-                <img class="logo" src="img/logo.png" width="300px" height="200px" />
                 <div class="container">
-                    <form class="form-horizontal" role="form" action="#results">
+                    <div class="panel panel-default">
+                        <div class="panel-body logo">
+                            <img class="logo" src="img/logo.png"
+                             width="180px" height="101px" />pon<b>train</b>eous
+                        </div>
+                    </div>
+                    <form class="form-horizontal" role="form" action="#choices">
                         <div class="form-group">
                             <label class="myLabel control-label col-xs-2" for="from">From:</label>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" id="from" placeholder="Departure station">
+                                <input type="text" class="form-control" id="from"
+                                 placeholder="Departure station">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class=" myLabel control-label col-xs-2" for="depart">Departing:</label>
+                            <label class=" myLabel control-label col-xs-2" for="depart">Depart:</label>
                             <div class="col-xs-10 pull-left">
-                                <input type="date" min="2015-03-30" value="2015-03-30" class="form-control" id="depart" placeholder="Departure date">
+                                <input type="date" class="form-control" id="depart"
+                                 title="Departure date">
                             </div>
-                        </div>
-                        <!--  <div class="form-group">
+                            <script>
+                                var day = new Date();
+                                var control = document.getElementById('depart');
+                                control.setAttribute('min', day.toISOString().split('T')[0]);
+                                day.setDate(day.getDate() + 1);
+                                control.value = day.toISOString().split('T')[0];
+                                day.setDate(day.getDate() + 28);
+                                control.setAttribute('max', day.toISOString().split('T')[0]);
+                            </script>
+                        <!--
                             <label class="control-label col-xs-2" for="days">No. of days:</label>
                             <div class="col-xs-10 pull-left">
-                                <input type="range" name="points" id="points" value="1" min="1" max="10">
+                                <input type="range" name="days" id="days"
+                                 value="1" min="1" max="10">
                             </div>
-                        </div> -->
-                        <div class="form-group">
-                            <label class="myLabel control-label col-xs-2" for="max">Budget:</label>
+                        -->
+                            <label class="myLabel control-label col-xs-2" for="max">Budget: £</label>
                             <div class="col-xs-10 pull-left">
-                                <input type="range" name="points" id="points" value="50" min="0" max="100">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="myLabel control-label col-xs-2">Adults:</label>
-                            <div class="col-xs-10 pull-left">
-                                <input type="range" name="points" id="points" value="1" min="0" max="10">
+                                <input type="range" name="max" id="max"
+                                 value="50" min="10" max="100" title="Maximum £/head">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="myLabel control-label col-xs-2">Children:</label>
+                            <label class="myLabel control-label col-xs-2" for="adult">Adults:</label>
                             <div class="col-xs-10 pull-left">
-                                <input type="range" name="points" id="points" value="1" min="0" max="10">
+                                <input type="range" name="adult" id="adult"
+                                 value="1" min="0" max="8" title="Adults over 16">
+                            </div>
+                            <label class="myLabel control-label col-xs-2" for="child">Children:</label>
+                            <div class="col-xs-10 pull-left">
+                                <input type="range" name="child" id="child"
+                                 value="0" min="0" max="8" title="Children aged 5-15">
                             </div>
                         </div>
                         <div class="form-group">
@@ -292,7 +311,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <button class="col-xs-offset-2 col-xs-10" type="submit" class="btn btn-default">Find trips</button>
+                            <button type="submit" class="btn btn-default">Find trips</button>
                         </div>
                     </form>
                 </div>
