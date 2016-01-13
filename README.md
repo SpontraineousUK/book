@@ -2,9 +2,10 @@
 
 >  Last minute adventures by rail
 
-[Slideshow introduction](https://docs.google.com/presentation/pub?id=1skpUiZ5vfjGucCAEOIzR-rnJoYLFqfYgylifIfGxts0&start=false&loop=false&delayms=5000)
+[Slideshow introduction](https://docs.google.com/presentation/d/1xuDF0ScnLx8p7V59JM6qRZuvDaLIYYs66_taR62aJFU/edit?usp=sharing)
 
 ![Tickets to Morocco for £18.39, that's cheaper than a travel card](https://www.facebook.com/photo/download/?fbid=10152869253464229)
+
 [When a train ticket bankrupts you - yet a flight is a bargain](https://www.facebook.com/greenpeaceuk/posts/10152869253464229)
 
 ## What do you do in detail?
