@@ -3,12 +3,12 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Spontraineous</title>
+    <title>Spontraineous last-minute adventures by rail</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="#HackTheRails" />
-    <meta name="description" content="Last-minute short break deals by train" />
-    <meta name="keywords" content="train,hotel,deals,last-minute,leisure,city,countryside,seaside,break" />
+    <meta name="description" content="Last-minute short break bargain deals by train" />
+    <meta name="keywords" content="train,deals,last-minute,leisure,city,countryside,seaside,family,break" />
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="css/examples.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -250,7 +250,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body logo">
                             <img class="logo" src="img/logo.png"
-                             width="180px" height="101px" />pon<b>train</b>eous
+                             width="180px" height="101px" alt="S"/>pon<b>train</b>eous
                         </div>
                     </div>
                     <form class="form-horizontal" role="form" action="#results">
@@ -271,7 +271,7 @@
                                 control.setAttribute('min', day.toISOString().split('T')[0]);
                                 day.setDate(day.getDate() + 1);
                                 control.value = day.toISOString().split('T')[0];
-                                day.setDate(day.getDate() + 28);
+                                day.setDate(day.getDate() + 3);
                                 control.setAttribute('max', day.toISOString().split('T')[0]);
                             </script>
                         <!--
@@ -280,12 +280,12 @@
                                 <input type="range" name="days" id="days"
                                  value="1" min="1" max="10">
                             </div>
-                        -->
                             <label class="myLabel control-label col-xs-2" for="max">Budget: £</label>
                             <div class="col-xs-10 pull-left">
                                 <input type="range" name="max" id="max"
                                  value="50" min="10" max="100" title="Maximum £/head">
                             </div>
+                        -->
                         </div>
                         <div class="form-group">
                             <label class="myLabel control-label col-xs-2" for="adult">Adults:</label>
@@ -305,8 +305,10 @@
                                 <select>
                                     <option selected value="all">All destinations</option>
                                     <option value="city">City breaks</option>
-                                    <option value="country">Counryside</option>
+                                    <option value="country">Countryside</option>
                                     <option value="sea">Seaside</option>
+                                    <option value="kids">Good for kids</option>
+                                    <option value="kids">Party town</option>
                                 </select>
                             </div>
                         </div>
