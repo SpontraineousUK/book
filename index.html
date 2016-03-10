@@ -61,17 +61,13 @@
                 <b>Spon</b>train<b>eous</b>
             </div>
             <form action="#deals">
-                <fieldset class="form-group">
-                    <label for="from">From:</label>
-                    <div class="col-xs-10">
-                        <input type="text" class="form-control" id="from"
-                         placeholder="Departure station">
-                    </div>
-                    <label class="myLabel control-label col-xs-2" for="depart">Depart:</label>
-                    <div class="col-xs-10 pull-left">
-                        <input type="date" class="form-control" id="depart"
-                         title="Departure date">
-                    </div>
+                <fieldset>
+                    <label title="Departure station">
+                        From:
+                        <input type="text" id="from" placeholder="Departure station">
+                    </label>
+                    <label for="depart">Depart:</label>
+                    <input type="date" id="depart" title="Departure date">
                     <script>
                         var day = new Date();
                         var control = document.getElementById('depart');
@@ -94,31 +90,29 @@
                     </div>
                 -->
                 </fieldset>
-                <fieldset class="form-group">
-                    <label for="adult">Adults:</label>
-                    <input type="range" id="adult"
-                        value="1" min="0" max="8" title="Adults over 16">
-                    <label for="child">Children:</label>
-                    <div class="col-xs-10 pull-left">
-                        <input type="range" id="child"
-                         value="0" min="0" max="8" title="Children aged 5-15">
+                <fieldset>
+                    <div title="Adults over 16">
+                        <label for="adult">Adults:</label>
+                        <input type="range" id="adult" value="1" min="0" max="8">
+                    </div>
+                    <div title="Children aged 5-15">
+                        <label for="child">Children:</label>
+                        <input type="range" id="child" value="0" min="0" max="8">
                     </div>
                 </fieldset>
-                <fieldset class="form-group">
-                    <label class="myLabel control-label col-xs-2" for="prefer">Prefer:</label>
-                    <div class="col-xs-10 pull-left blaaah">
-                        <select>
-                            <option selected value="all">Suprise me</option>
-                            <option value="city">City breaks</option>
-                            <option value="country">Countryside</option>
-                            <option value="sea">Seaside</option>
-                            <option value="kids">Good for kids</option>
-                            <option value="kids">Party town</option>
-                        </select>
-                    </div>
+                <fieldset>
+                    <label for="prefer">Prefer:</label>
+                    <select id="prefer">
+                        <option selected value="all">Suprise me</option>
+                        <option value="city">City breaks</option>
+                        <option value="country">Countryside</option>
+                        <option value="sea">Seaside</option>
+                        <option value="kids">Good for kids</option>
+                        <option value="adult">Party town</option>
+                    </select>
                 </fieldset>
-                <fieldset class="form-group">
-                    <button type="submit" class="btn btn-default">Find trips</button>
+                <fieldset>
+                    <button type="submit">Find trips</button>
                 </fieldset>
             </form>
         </header>
