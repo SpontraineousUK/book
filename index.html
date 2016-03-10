@@ -9,210 +9,22 @@
     <meta name="author" content="#HackTheRails" />
     <meta name="description" content="Last-minute short break bargain deals by train" />
     <meta name="keywords" content="train,deals,last-minute,leisure,city,countryside,seaside,family,break" />
+<!--
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="css/examples.css" />
+<!--
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <style>
-    /* Style for our header texts
-    * --------------------------------------- */
-    
-    .firstPage {
-        background-color: #009688 !important;
-        padding-top: 15px;
-        font-weight: bold;
-        text-shadow: none;
-    }
-    
-    #slide1 {
-        background-image: url('img/duncraig.jpg') !important;
-    }
-    
-    #slide2 {
-        background-image: url('img/chester.png') !important;
-    }
-    
-    #slide3 {
-        background-image: url('img/sugarloaf.jpg') !important;
-    }
-    
-    #slide4 {
-        background-image: url('img/brighton.jpg') !important;
-    }
-    
-    #slide5 {
-        background-image: url('img/london.jpg') !important;
-    }
-    
-    h1,
-    .destination {
-        font-size: 5em;
-        font-family: arial, helvetica;
-        text-shadow: 2px 2px #000;
-        color: #fff;
-        margin: 0;
-    }
-    
-    .via {
-        font-size: 200%;
-        font-family: arial, helvetica;
-        text-shadow: 2px 2px #000;
-        color: #efe;
-        margin: 0;
-    }
-    
-    .intro p {
-        color: #fff;
-    }
-    /* Centered texts in each section
-    * --------------------------------------- */
-    
-    .section {
-        text-align: center;
-    }
-    /* Overwriting styles for the navigation dots (to place it where we want)
-    * --------------------------------------- */
-    
-    .fp-slidesNav.bottom {
-        bottom: 25px;
-    }
-    /* Bottom menu
-    * --------------------------------------- */
-    
-    #infoMenu li a {
-        color: #fff;
-    }
-
-    .logo {
-        font: italic 200% arial, helvetica;
-        padding: 0 !important;
-    }
-    
-    .cost {
-        color: red;
-        padding-bottom: 120px;
-    }
-    
-    .bookNow {
-        padding-top: 120px;
-    }
-    
-    .cityTable {
-        align: center;
-        display: table;
-        margin: 0 auto;
-        padding-bottom: 40px;
-    }
-    
-    .rating {
-        float: left;
-    }
-    /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
-       follow these rules. Every browser that supports :checked also supports :not(), so
-       it doesn’t make the test unnecessarily selective */
-    
-    .rating:not(:checked) > input {
-        position: absolute;
-        top: -9999px;
-        clip: rect(0, 0, 0, 0);
-    }
-    
-    .rating:not(:checked) > label {
-        float: right;
-        width: 1em;
-        padding: 0 .1em;
-        overflow: hidden;
-        white-space: nowrap;
-        cursor: pointer;
-        font-size: 200%;
-        line-height: 1.2;
-        color: #ddd;
-        text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
-    }
-    
-    .rating:not(:checked) > label:before {
-        content: '★ ';
-    }
-    
-    .rating > input:checked ~ label {
-        color: #f70;
-        text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
-    }
-    
-    .rating:not(:checked) > label:hover,
-    .rating:not(:checked) > label:hover ~ label {
-        color: gold;
-        text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
-    }
-    
-    .rating > input:checked + label:hover,
-    .rating > input:checked + label:hover ~ label,
-    .rating > input:checked ~ label:hover,
-    .rating > input:checked ~ label:hover ~ label,
-    .rating > label:hover ~ input:checked ~ label {
-        color: #ea0;
-        text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
-    }
-    
-    .rating > label:active {
-        position: relative;
-        top: 2px;
-        left: 2px;
-    }
-    
-    .blurb,
-    #overnight {
-        visibility: hidden;
-    }
-    
-    #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-    }
-    
-    table,
-    th,
-    td {
-        border: 1px solid black;
-        padding: 5px;
-    }
-    
-    .myTable {
-        width: 100%;
-        text-align: left;
-    }
-    
-    .logo {
-        padding-bottom: 20px;
-    }
-    
-    .myLabel {
-        color: white !important;
-        font-weight: bold;
-        text-shadow: none;
-        padding-top: 15px;
-    }
-    
-    .prefer-button {
-        background-color: #009688 !important;
-        border: #009688 !important;
-        padding: 0px !important;
-    }
-    </style>
-    <!--[if IE]>
-        <script type="text/javascript">
-             var console = { log: function() {} };
-        </script>
-    <![endif]-->
+-->
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+<!--
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+<!--
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
-    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
-    <script type="text/javascript" src="js/examples.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
+-->
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
     <script type="text/javascript">
     function initialize() {
@@ -244,197 +56,124 @@
 
 <body>
     <div id="fullpage">
-        <div class="section firstPage" id="section0">
-            <div class="intro">
-                <div class="container">
-                    <div class="panel panel-default">
-                        <div class="panel-body logo">
-                            <img class="logo" src="img/logo.png"
-                             width="180px" height="101px" alt="S"/>pon<b>train</b>eous
-                        </div>
+        <header id="planner">
+            <div class="logo">
+                <b>Spon</b>train<b>eous</b>
+            </div>
+            <form action="#deals">
+                <fieldset class="form-group">
+                    <label for="from">From:</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" id="from"
+                         placeholder="Departure station">
                     </div>
-                    <form class="form-horizontal" role="form" action="#results">
-                        <div class="form-group">
-                            <label class="myLabel control-label col-xs-2" for="from">From:</label>
-                            <div class="col-xs-10">
-                                <input type="text" class="form-control" id="from"
-                                 placeholder="Departure station">
-                            </div>
-                            <label class=" myLabel control-label col-xs-2" for="depart">Depart:</label>
-                            <div class="col-xs-10 pull-left">
-                                <input type="date" class="form-control" id="depart"
-                                 title="Departure date">
-                            </div>
-                            <script>
-                                var day = new Date();
-                                var control = document.getElementById('depart');
-                                control.setAttribute('min', day.toISOString().split('T')[0]);
-                                day.setDate(day.getDate() + 1);
-                                control.value = day.toISOString().split('T')[0];
-                                day.setDate(day.getDate() + 3);
-                                control.setAttribute('max', day.toISOString().split('T')[0]);
-                            </script>
-                        <!--
-                            <label class="control-label col-xs-2" for="days">No. of days:</label>
-                            <div class="col-xs-10 pull-left">
-                                <input type="range" name="days" id="days"
-                                 value="1" min="1" max="10">
-                            </div>
-                            <label class="myLabel control-label col-xs-2" for="max">Budget: £</label>
-                            <div class="col-xs-10 pull-left">
-                                <input type="range" name="max" id="max"
-                                 value="50" min="10" max="100" title="Maximum £/head">
-                            </div>
-                        -->
-                        </div>
-                        <div class="form-group">
-                            <label class="myLabel control-label col-xs-2" for="adult">Adults:</label>
-                            <div class="col-xs-10 pull-left">
-                                <input type="range" name="adult" id="adult"
-                                 value="1" min="0" max="8" title="Adults over 16">
-                            </div>
-                            <label class="myLabel control-label col-xs-2" for="child">Children:</label>
-                            <div class="col-xs-10 pull-left">
-                                <input type="range" name="child" id="child"
-                                 value="0" min="0" max="8" title="Children aged 5-15">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="myLabel control-label col-xs-2" for="max">Prefer:</label>
-                            <div class="col-xs-10 pull-left blaaah">
-                                <select>
-                                    <option selected value="all">All destinations</option>
-                                    <option value="city">City breaks</option>
-                                    <option value="country">Countryside</option>
-                                    <option value="sea">Seaside</option>
-                                    <option value="kids">Good for kids</option>
-                                    <option value="kids">Party town</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-default">Find trips</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="section1">
-            <div class="intro">
-                <div id="map-canvas" style="width:640px; height:680px"></div>
-            </div>
-        </div>
-        <div class="section" id="section2">
-            <div class="slide" id="slide1" data-anchor="slide1">
-                <h1 class="cost">£<b>45</b></h1>
-                <h1 class="destination">Duncraig</h1>
-                <h2 class="via">via Inverness</h2>
-                <h2 class="via">via Edinburgh</h2>
-                <img src="img/bookNow.png" class="bookNow" />
-            </div>
-            <div class="slide" id="slide2" data-anchor="slide2">
-                <h1 class="cost">£<b>39</b></h1>
-                <h1 class="destination">Chester</h1>
-                <h2 class="via">via Manchester</h2>
-                <img src="img/bookNow.png" class="bookNow" />
-            </div>
-            <div class="slide" id="slide3" data-anchor="slide3">
-                <h1 class="cost">£<b>35</b></h1>
-                <h1 class="destination">Sugar Loaf</h1>
-                <h2 class="via">via Shrewsbury</h2>
-                <h2 class="via">via Manchester</h2>
-                <img src="img/bookNow.png" class="bookNow" />
-            </div>
-            <div class="slide" id="slide4" data-anchor="slide4">
-                <h1 class="cost">£<b>69</b></h1>
-                <h1 class="destination">Brighton</h1>
-                <h2 class="via">via London</h2>
-                <img src="img/bookNow.png" class="bookNow" />
-            </div>
-            <div class="slide" id="slide5" data-anchor="slide5">
-                <h1 class="cost">£<b>49</b></h1>
-                <h1 class="destination">London</h1>
-                <h2 class="via">via Sheffield</h2>
-                <img src="img/bookNow.png" class="bookNow" />
-            </div>
-        </div>
-        <div class="section" id="section4">
-            <div class="intro">
-                <h2>Journey Details</h2>
-                <div class="col-md-6">
-                    <img src="img/qrcode.jpg" />
-                </div>
-                <div class="col-md-6 cityTable">
-                    <h4>From York to Sheffield</h4>
-                    <table class="myTable">
-                        <tr>
-                            <td>Time</td>
-                            <td>16:45</td>
-                        </tr>
-                        <tr>
-                            <td>Seat #</td>
-                            <td>45</td>
-                        </tr>
-                        <tr>
-                            <td>Platform</td>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <td>Warning</td>
-                            <td><img src="img/warning.png"> Delayed by 30 minutes</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-md-6">
-                    <img src="img/qrcode.jpg" />
-                </div>
-                <div class="col-md-6 cityTable">
-                    <h4>From Sheffield to London</h4>
-                    <table class="myTable">
-                        <tr>
-                            <td>Time</td>
-                            <td>18:15</td>
-                        </tr>
-                        <tr>
-                            <td>Seat #</td>
-                            <td>15</td>
-                        </tr>
-                        <tr>
-                            <td>Platform</td>
-                            <td>2</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="section5">
-            <div class="intro">
-                <h2>Feedback</h2>
-                <form class="form-horizontal" role="form" action="#results">
-                    <div class="form-group">
-                        <label class="myLabel control-label col-xs-2" for="max">Journey:</label>
-                        <div class="col-xs-10 pull-left">
-                            <input type="range" name="points" id="points" value="0" min="0" max="5">
-                        </div>
+                    <label class="myLabel control-label col-xs-2" for="depart">Depart:</label>
+                    <div class="col-xs-10 pull-left">
+                        <input type="date" class="form-control" id="depart"
+                         title="Departure date">
                     </div>
+                    <script>
+                        var day = new Date();
+                        var control = document.getElementById('depart');
+                        control.setAttribute('min', day.toISOString().split('T')[0]);
+                        day.setDate(day.getDate() + 1);
+                        control.value = day.toISOString().split('T')[0];
+                        day.setDate(day.getDate() + 3);
+                        control.setAttribute('max', day.toISOString().split('T')[0]);
+                    </script>
+                <!--
+                    <label class="control-label col-xs-2" for="days">No. of days:</label>
+                    <div class="col-xs-10 pull-left">
+                        <input type="range" name="days" id="days"
+                         value="1" min="1" max="10">
+                    </div>
+                    <label class="myLabel control-label col-xs-2" for="max">Budget: £</label>
+                    <div class="col-xs-10 pull-left">
+                        <input type="range" name="max" id="max"
+                         value="50" min="10" max="100" title="Maximum £/head">
+                    </div>
+                -->
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="adult">Adults:</label>
+                    <input type="range" id="adult"
+                        value="1" min="0" max="8" title="Adults over 16">
+                    <label for="child">Children:</label>
+                    <div class="col-xs-10 pull-left">
+                        <input type="range" id="child"
+                         value="0" min="0" max="8" title="Children aged 5-15">
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label class="myLabel control-label col-xs-2" for="prefer">Prefer:</label>
+                    <div class="col-xs-10 pull-left blaaah">
+                        <select>
+                            <option selected value="all">Suprise me</option>
+                            <option value="city">City breaks</option>
+                            <option value="country">Countryside</option>
+                            <option value="sea">Seaside</option>
+                            <option value="kids">Good for kids</option>
+                            <option value="kids">Party town</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <button type="submit" class="btn btn-default">Find trips</button>
+                </fieldset>
+            </form>
+        </header>
+        <main id="xxfullpage">
+            <section class="section" id="splash">
+                        <h2><b>Spon</b>train<b>eous</b></h2>
+                        <h3>Last minute adventures by rail</h3>
+                        <h6>Discover the hidden gems of Britain. Prices from £10 return. We're busy negotiating deals for you now &mdash; the first, from London, will be up in April.</h6>
+                        
+                        <!-- CTA Buttons-->
+                        <div class="cta_button_area">
+                            <div><button class="btn waves-effect waves-light subscribe-submit"><a href="#newsletter">Get away</a></button></div>
+                            <a href="#more_info"><small>Let us keep you up-to-date with our launch in April.</small></a>
+                        </div>
+                        <!-- //CTA Buttons-->
+            </section>
 
-                    <div class="form-group">
-                        <label class="myLabel control-label col-xs-2" for="max">Ticketing:</label>
-                        <div class="col-xs-10 pull-left">
-                            <input type="range" name="points" id="points" value="0" min="0" max="5">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="myLabel control-label col-xs-2" for="max">Overall Experience:</label>
-                        <div class="col-xs-10 pull-left">
-                            <input type="range" name="points" id="points" value="0" min="0" max="5">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+            <section class="section" id="deals">
+                <div id="map-canvas" style="width:100%; height:680px"></div>
+            </section>
+            <section class="section" id="carousel">
+                <article class="slide" id="slide1" data-anchor="slide1">
+                    <h2 class="cost">£<b>45</b></h2>
+                    <h2 class="destination">Duncraig</h2>
+                    <h6 class="via">via Inverness</h6>
+                    <h6 class="via">via Edinburgh</h6>
+                    <img src="img/bookNow.png" class="bookNow" />
+                </article>
+                <article class="slide" id="slide2" data-anchor="slide2">
+                    <h2 class="cost">£<b>39</b></h2>
+                    <h2 class="destination">Chester</h2>
+                    <h6 class="via">via Manchester</h6>
+                    <img src="img/bookNow.png" class="bookNow" />
+                </article>
+                <article class="slide" id="slide3" data-anchor="slide3">
+                    <h2 class="cost">£<b>35</b></h1>
+                    <h2 class="destination">Sugar Loaf</h1>
+                    <h6 class="via">via Shrewsbury</h2>
+                    <h6 class="via">via Manchester</h2>
+                    <img src="img/bookNow.png" class="bookNow" />
+                </article>
+                <article class="slide" id="slide4" data-anchor="slide4">
+                    <h1 class="cost">£<b>69</b></h1>
+                    <h1 class="destination">Brighton</h1>
+                    <h2 class="via">via London</h2>
+                    <img src="img/bookNow.png" class="bookNow" />
+                </article>
+                <article class="slide" id="slide5" data-anchor="slide5">
+                    <h1 class="cost">£<b>49</b></h1>
+                    <h1 class="destination">London</h1>
+                    <h2 class="via">via Sheffield</h2>
+                    <img src="img/bookNow.png" class="bookNow" />
+                </article>
+            </section>
+        </main>
     </div>
 </body>
-
 </html>

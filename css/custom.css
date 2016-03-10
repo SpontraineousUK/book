@@ -1,0 +1,234 @@
+body, input, select, textarea, button {
+	font-family: -apple-system, BlinkMacSystemFont, 
+    	"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
+    	"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 1em;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+
+    /* Avoid flicker on slides transitions for mobile phones #336 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#xfullpage {
+    height: 100%;
+    position: relative;
+    overflow: auto;
+
+    /* Touch detection for Windows 8 */
+    -ms-touch-action: none;
+
+    /* IE 11 on Windows Phone 8.1*/
+    touch-action: none;
+}
+
+@media print, screen and (min-width: 36em) {
+	header {
+		position: fixed;
+		right: 0;
+		left: 0;
+		z-index: 9;
+		height: 100%;
+		width: 15em;
+		margin: 0;
+	}
+	main {
+		margin-left: 15em;
+	}
+}
+
+@media print, screen and (min-width: 72em) {
+	h1, h2, h3, h4, h5, h6 {
+		position: relative;
+		width: 50%;
+		left: 25%;
+	}
+}
+
+@media screen {
+
+/*
+	#fullpage {
+		display: table-cell;
+		vertical-align: middle;
+		z-index: 1;
+	}
+*/
+	.xbutton {
+		position: relative;
+		cursor: pointer;
+		display: inline-block;
+		overflow: hidden;
+		vertical-align: bottom;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-webkit-tap-highlight-color: transparent;
+		-webkit-transition: all 650ms ease;
+		-moz-transition: all 650ms ease;
+		-o-transition: all 650ms ease;
+		-ms-transition: all 650ms ease;
+		transition: all 650ms ease;
+	}
+}
+
+.logo {
+    padding: 1em;
+    font-size: 133%;
+    color: #222;
+}
+
+input, select, textarea, form button, label {
+	width: 100%;
+}
+
+fieldset {
+	border: 0;
+}
+
+section {
+	vertical-align: middle;
+	text-align: center;
+}
+
+button {
+	text-decoration: none;
+	color: #FFF;
+	text-align: center;
+	letter-spacing: 0.8px;
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease-out;
+	-o-transition: 0.2s ease-out;
+	-ms-transition: 0.2s ease-out;
+	transition: 0.2s ease-out;
+	cursor: pointer;
+	display: inline-block;
+	height: 2.57rem;
+	margin-bottom: 15px;
+	padding: 0 1.5rem;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-clip: padding-box;
+	line-height: 2.57rem;
+	border: none;
+	background-color: #2196F3;
+}
+
+a {
+	opacity: 0.5;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+#map-canvas {
+    height: 100%;
+    margin: 0px;
+    padding: 0px
+}
+
+#splash {
+	background-image: -ms-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-image: -moz-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-image: -o-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #2196F3), color-stop(1, #311B92));
+	background-image: -webkit-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-color: #212121;
+	color: white;
+}
+
+#slide1 {
+    background-image: url('../img/duncraig.jpg') !important;
+}
+
+#slide2 {
+    background-image: url('../img/chester.png') !important;
+}
+
+#slide3 {
+    background-image: url('../img/sugarloaf.jpg') !important;
+}
+
+#slide4 {
+    background-image: url('../img/brighton.jpg') !important;
+}
+
+#slide5 {
+    background-image: url('../img/london.jpg') !important;
+}
+
+h1,
+.destination {
+    font-size: 5em;
+    text-shadow: 2px 2px #000;
+    color: #fff;
+    margin: 0;
+}
+
+h2, h3 {
+	opacity: 0.64;
+	font-weight: 300;
+	letter-spacing: -0.13rem;
+	font-size: 3.21rem;
+	line-height: 3.44rem;
+	margin: 0;
+	padding: 1.72rem;
+}
+
+h6 {
+	opacity: 0.87;
+	font-weight: 500;
+	letter-spacing: 0.02rem;
+	font-size: 1rem;
+	line-height: 1.72rem;
+	margin: 0;
+	padding: 1.72rem;
+}
+
+.via {
+    font-size: 200%;
+    text-shadow: 2px 2px #000;
+    color: #efe;
+    margin: 0;
+}
+
+.intro p {
+    color: #fff;
+}
+
+
+/* Overwriting styles for the navigation dots (to place it where we want)
+* --------------------------------------- */
+
+.fp-slidesNav.bottom {
+    bottom: 25px;
+}
+/* Bottom menu
+* --------------------------------------- */
+
+#infoMenu li a {
+    color: #fff;
+}
+
+.logo {
+    font-size:200%
+    align:center;
+}
+
+.cost {
+    color: red;
+    padding-bottom: 120px;
+}
+
+.bookNow {
+    padding-top: 120px;
+}
