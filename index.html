@@ -13,15 +13,18 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 <!--
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
 -->
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
-<!--
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
+<!--
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <!--
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
 -->
@@ -66,8 +69,10 @@
                         From:
                         <input type="text" id="from" placeholder="Departure station">
                     </label>
-                    <label for="depart">Depart:</label>
-                    <input type="date" id="depart" title="Departure date">
+                    <label title="Departure date">
+                        Depart:
+                        <input type="date" id="depart" title="Departure date">
+                    </label>
                     <script>
                         var day = new Date();
                         var control = document.getElementById('depart');
@@ -91,25 +96,54 @@
                 -->
                 </fieldset>
                 <fieldset>
-                    <div title="Adults over 16">
-                        <label for="adult">Adults:</label>
+                    <label class="col-5" title="Adults over 16">
+                        Adults:
+<!--
                         <input type="range" id="adult" value="1" min="0" max="8">
-                    </div>
-                    <div title="Children aged 5-15">
-                        <label for="child">Children:</label>
+-->
+                        <select id="adult">
+                            <option value="0">0</option>
+                            <option selected value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </label>
+                    <span class="col-2"> </span>
+                    <label class="col-5" title="Children aged 5-15">
+                        Children:
+<!--
                         <input type="range" id="child" value="0" min="0" max="8">
-                    </div>
+-->
+                        <select id="child">
+                            <option selected value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </label>
                 </fieldset>
                 <fieldset>
-                    <label for="prefer">Prefer:</label>
-                    <select id="prefer">
-                        <option selected value="all">Suprise me</option>
-                        <option value="city">City breaks</option>
-                        <option value="country">Countryside</option>
-                        <option value="sea">Seaside</option>
-                        <option value="kids">Good for kids</option>
-                        <option value="adult">Party town</option>
-                    </select>
+                    <label title="What kind of break are you looking for?">
+                        Prefer:
+                        <select id="prefer">
+                            <option selected value="all">Suprise me</option>
+                            <option value="city">City breaks</option>
+                            <option value="country">Countryside</option>
+                            <option value="sea">Seaside</option>
+                            <option value="kids">Good for kids</option>
+                            <option value="adult">Party town</option>
+                        </select>
+                    </label>
                 </fieldset>
                 <fieldset>
                     <button type="submit">Find trips</button>

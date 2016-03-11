@@ -98,6 +98,20 @@ section {
 	text-align: center;
 }
 
+.col-2, .col-5 {
+	float: left;
+	position: relative;
+	min-height: 1px;
+}
+
+.col-2 {
+	width: 16.66666667%;
+}
+
+.col-5 {
+	width: 41.66666667%;
+}
+
 button {
 	text-decoration: none;
 	color: #FFF;
