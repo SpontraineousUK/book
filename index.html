@@ -6,7 +6,7 @@
     <title>Spontraineous last-minute adventures by rail</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="#HackTheRails" />
+    <meta name="author" content="@rfinean" />
     <meta name="description" content="Last-minute short break bargain deals by train" />
     <meta name="keywords" content="train,deals,last-minute,leisure,city,countryside,seaside,family,break" />
 <!--
@@ -31,19 +31,24 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
     <script type="text/javascript">
     function initialize() {
-        var york = new google.maps.LatLng(53.962290800000000000, -1.081899499999963100);
-        var london = new google.maps.LatLng(51.5072, 0.1275);
+        var init = new google.maps.LatLng(52, -3);
+        var york = new google.maps.LatLng(53.9623, -1.0819);
+        var london = new google.maps.LatLng(51.5072, -0.1275);
+        var duncraig = new google.maps.LatLng(57.3371, -5.6369);
+        var chester = new google.maps.LatLng(53.190, -2.891);
+        var sugarloaf = new google.maps.LatLng(51.8645, -3.0575);
+        var brighton = new google.maps.LatLng(50.842, -0.131);
 
         var mapOptions = {
             zoom: 7,
-            center: york
+            center: init
         }
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
         var first = new google.maps.Marker({
             position: york,
             map: map,
-            title: 'York'
+            title: 'From York'
         });
 
         var second = new google.maps.Marker({
@@ -51,9 +56,33 @@
             map: map,
             title: 'London £49'
         });
+
+        var third = new google.maps.Marker({
+            position: duncraig,
+            map: map,
+            title: 'Duncraig £45'
+        });
+
+        var forth = new google.maps.Marker({
+            position: chester,
+            map: map,
+            title: 'Chester £39'
+        });
+
+        var fifth = new google.maps.Marker({
+            position: sugarloaf,
+            map: map,
+            title: 'Sugar Loaf £35'
+        });
+
+        var sixth = new google.maps.Marker({
+            position: brighton,
+            map: map,
+            title: 'Brighton £69'
+        });
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize)
+    google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 </head>
 
@@ -152,16 +181,21 @@
         </header>
         <main id="xxfullpage">
             <section class="section" id="splash">
+                <div class="display">
                         <h2><b>Spon</b>train<b>eous</b></h2>
                         <h3>Last minute adventures by rail</h3>
-                        <h6>Discover the hidden gems of Britain. Prices from £10 return. We're busy negotiating deals for you now &mdash; the first, from London, will be up in April.</h6>
+                        <h6>
+                            Discover the hidden gems of Britain.
+                            Prices from £10 return.
+                            We're busy negotiating deals for you now
+                            &mdash; the first, from London, will be up in April.
+                        </h6>
                         
-                        <!-- CTA Buttons-->
-                        <div class="cta_button_area">
-                            <div><button class="btn waves-effect waves-light subscribe-submit"><a href="#newsletter">Get away</a></button></div>
-                            <a href="#more_info"><small>Let us keep you up-to-date with our launch in April.</small></a>
-                        </div>
-                        <!-- //CTA Buttons-->
+                        <button class="btn waves-effect waves-light subscribe-submit"><a href="#newsletter">Get away</a></button>
+                        <p><a href="#more_info">
+                            Let us keep you up-to-date with our launch in April.
+                        </a></p>
+                <div class="display">
             </section>
 
             <section class="section" id="deals">
@@ -169,36 +203,50 @@
             </section>
             <section class="section" id="carousel">
                 <article class="slide" id="slide1" data-anchor="slide1">
-                    <h2 class="cost">£<b>45</b></h2>
-                    <h2 class="destination">Duncraig</h2>
-                    <h6 class="via">via Inverness</h6>
-                    <h6 class="via">via Edinburgh</h6>
-                    <img src="img/bookNow.png" class="bookNow" />
+                    <div class="display">
+                        <h2>£<b>45</b></h2>
+                        <h2>Duncraig</h2>
+                        <h6>
+                            via Inverness<br />
+                            via Edinburgh
+                        </h6>
+                        <button>Want to go?</button>
+                    </div>
                 </article>
                 <article class="slide" id="slide2" data-anchor="slide2">
-                    <h2 class="cost">£<b>39</b></h2>
-                    <h2 class="destination">Chester</h2>
-                    <h6 class="via">via Manchester</h6>
-                    <img src="img/bookNow.png" class="bookNow" />
+                    <div class="display">
+                        <h2>£<b>39</b></h2>
+                        <h2>Chester</h2>
+                        <h6>via Manchester</h6>
+                        <button>Want to go?</button>
+                    </div>
                 </article>
                 <article class="slide" id="slide3" data-anchor="slide3">
-                    <h2 class="cost">£<b>35</b></h1>
-                    <h2 class="destination">Sugar Loaf</h1>
-                    <h6 class="via">via Shrewsbury</h2>
-                    <h6 class="via">via Manchester</h2>
-                    <img src="img/bookNow.png" class="bookNow" />
+                    <div class="display">
+                        <h2>£<b>35</b></h2>
+                        <h2>Sugar Loaf</h2>
+                        <h6>
+                            via Shrewsbury<br />
+                            via Manchester
+                        </h6>
+                        <button>Want to go?</button>
+                    </div>
                 </article>
                 <article class="slide" id="slide4" data-anchor="slide4">
-                    <h1 class="cost">£<b>69</b></h1>
-                    <h1 class="destination">Brighton</h1>
-                    <h2 class="via">via London</h2>
-                    <img src="img/bookNow.png" class="bookNow" />
+                    <div class="display">
+                        <h2>£<b>69</b></h2>
+                        <h2>Brighton</h2>
+                        <h6>via London</h6>
+                        <button>Want to go?</button>
+                    </div>
                 </article>
                 <article class="slide" id="slide5" data-anchor="slide5">
-                    <h1 class="cost">£<b>49</b></h1>
-                    <h1 class="destination">London</h1>
-                    <h2 class="via">via Sheffield</h2>
-                    <img src="img/bookNow.png" class="bookNow" />
+                    <div class="display">
+                        <h2>£<b>49</b></h2>
+                        <h2>London</h2>
+                        <h6>via Sheffield</h6>
+                        <button>Want to go?</button>
+                    </div>
                 </article>
             </section>
         </main>

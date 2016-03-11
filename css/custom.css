@@ -10,22 +10,29 @@ body, input, select, textarea, button {
     /* Avoid flicker on slides transitions for mobile phones #336 */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-#xfullpage {
-    height: 100%;
-    position: relative;
-    overflow: auto;
+@media screen {
+	body {
+		-webkit-font-smoothing: antialiased !important;
+		text-rendering: optimizeLegibility !important;
+	}
 
-    /* Touch detection for Windows 8 */
-    -ms-touch-action: none;
+	#fullpage {
+	    height: 100%;
+	    position: relative;
+	    overflow: auto;
 
-    /* IE 11 on Windows Phone 8.1*/
-    touch-action: none;
+	    /* Touch detection for Windows 8 */
+	    -ms-touch-action: none;
+	    /* IE 11 on Windows Phone 8.1*/
+	    touch-action: none;
+	}
 }
 
 @media print, screen and (min-width: 36em) {
@@ -44,45 +51,48 @@ body, input, select, textarea, button {
 }
 
 @media print, screen and (min-width: 72em) {
-	h1, h2, h3, h4, h5, h6 {
+	.display {
 		position: relative;
 		width: 50%;
 		left: 25%;
+		height: 100%;
+		vertical-align: middle;
+		padding: 6em 0 1em 0;
 	}
 }
 
-@media screen {
-
-/*
-	#fullpage {
-		display: table-cell;
-		vertical-align: middle;
-		z-index: 1;
-	}
-*/
-	.xbutton {
-		position: relative;
-		cursor: pointer;
-		display: inline-block;
-		overflow: hidden;
-		vertical-align: bottom;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		-webkit-tap-highlight-color: transparent;
-		-webkit-transition: all 650ms ease;
-		-moz-transition: all 650ms ease;
-		-o-transition: all 650ms ease;
-		-ms-transition: all 650ms ease;
-		transition: all 650ms ease;
-	}
+.xbutton {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: bottom;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-transition: all 650ms ease;
+	-moz-transition: all 650ms ease;
+	-o-transition: all 650ms ease;
+	-ms-transition: all 650ms ease;
+	transition: all 650ms ease;
 }
 
 .logo {
-    padding: 1em;
+    padding: 1em 1.35em 1em 1em;
     font-size: 133%;
-    color: #222;
+    color: #212121;
+    text-align: center;
+}
+
+main {
+	background-image: -ms-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-image: -moz-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-image: -o-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #2196F3), color-stop(1, #311B92));
+	background-image: -webkit-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-color: #311B92;
 }
 
 input, select, textarea, form button, label {
@@ -93,9 +103,14 @@ fieldset {
 	border: 0;
 }
 
-section {
-	vertical-align: middle;
+section, article {
 	text-align: center;
+	background: no-repeat 0 0 fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+	color: white;
 }
 
 .col-2, .col-5 {
@@ -112,16 +127,17 @@ section {
 	width: 41.66666667%;
 }
 
-button {
+button, button a {
 	text-decoration: none;
 	color: #FFF;
+	opacity: 1;
 	text-align: center;
 	letter-spacing: 0.8px;
-	-webkit-transition: 0.2s ease-out;
-	-moz-transition: 0.2s ease-out;
-	-o-transition: 0.2s ease-out;
-	-ms-transition: 0.2s ease-out;
-	transition: 0.2s ease-out;
+	-webkit-transition: all 650ms ease;
+	-moz-transition: all 650ms ease;
+	-o-transition: all 650ms ease;
+	-ms-transition: all 650ms ease;
+	transition: all 650ms ease;
 	cursor: pointer;
 	display: inline-block;
 	height: 2.57rem;
@@ -137,7 +153,9 @@ button {
 }
 
 a {
-	opacity: 0.5;
+	text-decoration: none;
+	color: #FFF;
+/*	opacity: 0.5; */
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -151,33 +169,28 @@ a {
 }
 
 #splash {
-	background-image: -ms-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-image: -moz-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-image: -o-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #2196F3), color-stop(1, #311B92));
-	background-image: -webkit-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-color: #212121;
-	color: white;
+    background-image: url('../img/tenby.jpg');
+    background-attachment: inherit;
 }
 
 #slide1 {
-    background-image: url('../img/duncraig.jpg') !important;
+    background-image: url('../img/duncraig.jpg');
 }
 
 #slide2 {
-    background-image: url('../img/chester.png') !important;
+    background-image: url('../img/chester.png');
 }
 
 #slide3 {
-    background-image: url('../img/sugarloaf.jpg') !important;
+    background-image: url('../img/sugarloaf.jpg');
 }
 
 #slide4 {
-    background-image: url('../img/brighton.jpg') !important;
+    background-image: url('../img/brighton.jpg');
 }
 
 #slide5 {
-    background-image: url('../img/london.jpg') !important;
+    background-image: url('../img/london.jpg');
 }
 
 h1,
@@ -188,8 +201,18 @@ h1,
     margin: 0;
 }
 
-h2, h3 {
-	opacity: 0.64;
+h2 {
+	opacity: 0.8;
+	font-weight: 300;
+	letter-spacing: -0.13rem;
+	font-size: 4rem;
+	line-height: 4.2rem;
+	margin: 0;
+	padding: 1.72rem;
+}
+
+h3 {
+	opacity: 0.87;
 	font-weight: 300;
 	letter-spacing: -0.13rem;
 	font-size: 3.21rem;
@@ -199,45 +222,11 @@ h2, h3 {
 }
 
 h6 {
-	opacity: 0.87;
+	opacity: 1;
 	font-weight: 500;
 	letter-spacing: 0.02rem;
 	font-size: 1rem;
 	line-height: 1.72rem;
 	margin: 0;
 	padding: 1.72rem;
-}
-
-.via {
-    font-size: 200%;
-    text-shadow: 2px 2px #000;
-    color: #efe;
-    margin: 0;
-}
-
-.intro p {
-    color: #fff;
-}
-
-
-/* Overwriting styles for the navigation dots (to place it where we want)
-* --------------------------------------- */
-
-.fp-slidesNav.bottom {
-    bottom: 25px;
-}
-/* Bottom menu
-* --------------------------------------- */
-
-#infoMenu li a {
-    color: #fff;
-}
-
-.cost {
-    color: red;
-    padding-bottom: 120px;
-}
-
-.bookNow {
-    padding-top: 120px;
 }
