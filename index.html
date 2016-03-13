@@ -41,8 +41,13 @@
 
         var mapOptions = {
             zoom: 7,
-            center: init
-        }
+            center: init,
+            zoomControl: false,
+            scaleControl: false,
+            scrollwheel: false,
+            disableDoubleClickZoom: true
+        };
+
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
         var first = new google.maps.Marker({
