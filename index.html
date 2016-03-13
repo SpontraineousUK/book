@@ -83,8 +83,25 @@
       ga('create', 'UA-75047151-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <script>
+        window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+         
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+         
+          return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
 </head>
-
 <body>
     <div id="fullpage">
         <header id="planner">
@@ -110,25 +127,10 @@
                         day.setDate(day.getDate() + 3);
                         control.setAttribute('max', day.toISOString().split('T')[0]);
                     </script>
-                <!--
-                    <label class="control-label col-xs-2" for="days">No. of days:</label>
-                    <div class="col-xs-10 pull-left">
-                        <input type="range" name="days" id="days"
-                         value="1" min="1" max="10">
-                    </div>
-                    <label class="myLabel control-label col-xs-2" for="max">Budget: £</label>
-                    <div class="col-xs-10 pull-left">
-                        <input type="range" name="max" id="max"
-                         value="50" min="10" max="100" title="Maximum £/head">
-                    </div>
-                -->
                 </fieldset>
                 <fieldset>
                     <label class="col-5" title="Adults over 16">
                         Adults:
-<!--
-                        <input type="range" id="adult" value="1" min="0" max="8">
--->
                         <select id="adult">
                             <option value="0">0</option>
                             <option selected value="1">1</option>
@@ -144,9 +146,6 @@
                     <span class="col-2"> </span>
                     <label class="col-5" title="Children aged 5-15">
                         Children:
-<!--
-                        <input type="range" id="child" value="0" min="0" max="8">
--->
                         <select id="child">
                             <option selected value="0">0</option>
                             <option value="1">1</option>
@@ -180,8 +179,12 @@
             <fieldset>
                 <iframe
                     src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSpontraineousUK&amp;send=false&amp;layout=standard&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=1769832909918540"
-                    scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:21px;" allowTransparency="true">
+                    scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:40px;" allowTransparency="true">
                 </iframe>
+                <a class="twitter-follow-button"
+                    href="https://twitter.com/SpontraineousUK" data-show-screen-name="false">
+                    Follow @SpontraineousUk
+                </a>
             </fieldset>
         </header>
         <main id="xxfullpage">
