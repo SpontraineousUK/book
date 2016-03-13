@@ -58,6 +58,8 @@ and no accurate picture about occupancy expected.
 Organisations we're hoping will be supportive:
 
 - GWR
+- Virgin Trains
+- C2C
 - City of York
 - Visit Britain
 - Network Rail
