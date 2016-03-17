@@ -184,9 +184,23 @@
                     </div>
                 </article>
             </section>
+            <script id="place-template" type="text/template">
+              {{destinations}}
+                <article class="slide" id="{{destinationId}}" data-pic="picUrl">
+                    <div class="display">
+                        <h2>£<b>40</b></h2>
+                        <h2>{{destinationname}}</h2>
+                        <h6>{{section1text}}</h6>
+                        <button>Want to go?</button>
+                    </div>
+                </article>
+              {{/destinations}}
+            </script>
         </main>
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
+    <script src='https://cdn.firebase.com/js/client/1.0.2/firebase.js'></script>
+    <script src="js/markup.min.js"></script>
     <script src="js/book.js"></script>
     <script>
       window.fbAsyncInit = function() {

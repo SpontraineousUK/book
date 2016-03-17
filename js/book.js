@@ -6,6 +6,8 @@ function DealPicker(d, ga, url) {
     var fullpage = {
             anchors: ['splash', 'deals', 'places', 'daypicker', 'book']
         },
+        destinationsDB = new Firebase('https://spontraineous.firebaseio.com/places'),
+        destinations = [],
         filters = d.forms.filter.elements;
 
     function initFilter() {
@@ -75,14 +77,37 @@ function DealPicker(d, ga, url) {
         });
     }
 
+    function initPlaces() {
+        destinationsDB.once('value', function(snapshot) {
+          if(snapshot.val() === null) {
+            alert("Can't find any destinations. Please try later.");
+          } else {
+            snapshot.forEach(function(destination) {
+                destinations.push(destination.val());
+                console.log(destination.val());
+            });
+            var template = d.getElementById("place-template").firstChild.textContent;
+            var context = {
+                destinations: destinations,
+            };
+            d.getElementById("places").innerHTML = Mark.up(template, context);
+            console.log("DONE");
+          }
+        });
+    }
+
+    function findTrips() {
+        // to do
+    }
+
     initFilter();
     initMap();
+    initPlaces();
 
 
     ga('send', 'event', 'Book', 'loaded', '', 0);
     return {
-        stop: stop,
-        fbShare: fbShare
+        findTrips : findTrips
     };
 }
 
