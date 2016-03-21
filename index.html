@@ -102,6 +102,7 @@
                 </a>
             </fieldset>
         </header>
+
         <main>
             <section class="section" id="splash">
                 <div class="display">
@@ -135,66 +136,45 @@
             <section class="section closed" id="deals">
                 <div id="map-canvas" style="width:100%; height:480px"></div>
             </section>
-            <section class="section" id="places">
-                <article class="slide" id="slide1" data-anchor="slide1">
-                    <div class="display">
-                        <h2>£<b>45</b></h2>
-                        <h2>Duncraig</h2>
-                        <h6>
-                            via Inverness<br />
-                            via Edinburgh
-                        </h6>
-                        <button>Want to go?</button>
-                    </div>
-                </article>
-                <article class="slide" id="slide2" data-anchor="slide2">
-                    <div class="display">
-                        <h2>£<b>39</b></h2>
-                        <h2>Chester</h2>
-                        <h6>via Manchester</h6>
-                        <button>Want to go?</button>
-                    </div>
-                </article>
-                <article class="slide" id="slide3" data-anchor="slide3">
-                    <div class="display">
-                        <h2>£<b>35</b></h2>
-                        <h2>Sugar Loaf</h2>
-                        <h6>
-                            via Shrewsbury<br />
-                            via Manchester
-                        </h6>
-                        <button>Want to go?</button>
-                    </div>
-                </article>
-                <article class="slide" id="slide4" data-anchor="slide4">
-                    <div class="display">
-                        <h2>£<b>69</b></h2>
-                        <h2>Brighton</h2>
-                        <h6>via London</h6>
-                        <button>Want to go?</button>
-                    </div>
-                </article>
-                <article class="slide" id="slide5" data-anchor="slide5">
-                    <div class="display">
-                        <h2>£<b>49</b></h2>
-                        <h2>London</h2>
-                        <h6>via Sheffield</h6>
-                        <button>Want to go?</button>
-                    </div>
-                </article>
+
+            <section class="section closed" id="places">
             </section>
             <script id="place-template" type="text/template">
               {{destinations}}
-                <article class="slide" id="{{destinationname}}"
-                    style="background-image: url('{{section2imageurl}}')">
+                <article class="slide" id="{{destinationid}}"
+                    style="background-image: url('{{splashpictureurl}}')">
                     <div class="display">
-                        <h2>£<b>40</b></h2>
+                        <h2>£<b>{{price}}</b></h2>
                         <h2>{{destinationname}}</h2>
-                        <h6>{{section1text}}</h6>
-                        <button>Want to go?</button>
+                        <h6>{{splashtext}}</h6>
+                        <button onclick="book.checkout({{destinationid}})">
+                            Want to go?
+                        </button>
+                    </div>
+                <div class="detail">
+                        <h3>{{section1title}}</h3>
+                        <pre xstyle="background-image: url('{{section1imageurl}}')">{{section1text}}</pre>
+                        <h3>{{section2title}}</h3>
+                        <pre>{{section2text}}</pre>
+                        <h3>{{section3title}}</h3>
+                        <pre>{{section3text}}</pre>
+                        <button onclick="book.checkout({{destinationid}})">
+                            Want to go?
+                        </button>
                     </div>
                 </article>
               {{/destinations}}
+            </script>
+
+            <section class="section closed" id="book">
+            </section>
+            <script id="book-template" type="text/template">
+                <div style="background-image: url('{{splashpictureurl}}')">
+                    <div class="display">
+                        <h2>£<b>{{price}}</b></h2>
+                        <h2>{{destinationname}}</h2>
+                    </div>
+                </div>
             </script>
 
             <section class="section" id="newsletter">
@@ -221,7 +201,7 @@
 
         </main>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
+    <!-- script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script -->
     <script src='https://cdn.firebase.com/js/client/1.0.2/firebase.js'></script>
     <script src="js/markup.min.js"></script>
     <script src="js/book.js"></script>

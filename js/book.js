@@ -5,9 +5,21 @@ function DealPicker(d, ga, destinations) {
     'use strict';
 
     var fullpage = {
-            anchors: ['splash', 'deals', 'places', 'daypicker', 'book', 'newsletter']
+            anchors: ['splash', 'deals', 'places', 'detail', 'book', 'newsletter']
         },
         filters = d.forms.filter.elements;
+
+    function close(section) {
+        d.getElementById(section).className = 'section closed';
+    }
+    function open(section) {
+        d.getElementById(section).className = 'section';
+    }
+    function go(section) {
+        fullpage.anchors.forEach(close);
+        open(section);
+        window.location = '#' + section;
+    }
 
     function initFilter() {
         var day = new Date();
@@ -91,17 +103,18 @@ function DealPicker(d, ga, destinations) {
             title: 'Brighton £69'
         });
 
-        d.getElementById('deals').className = 'section';
+        open('deals');
     }
 
     function initPlaces(destinations) {
         console.log('initPlaces with ' + destinations);
         console.log(destinations);
-        var template = d.getElementById("place-template").firstChild.textContent;
+        var template = d.getElementById('place-template').firstChild.textContent;
         var context = {
             destinations: destinations,
         };
-        d.getElementById("places").innerHTML = Mark.up(template, context);
+        d.getElementById('places').innerHTML = Mark.up(template, context);
+        open('places');
     }
 
     function findTrips() {
@@ -109,12 +122,13 @@ function DealPicker(d, ga, destinations) {
     }
 
     initFilter();
-    initMap();
+//    initMap();
     loadDestinations();
 
     ga('send', 'event', 'Book', 'loaded', '', 0);
     return {
-        findTrips : findTrips
+        findTrips : findTrips,
+        go : go
     };
 }
 
