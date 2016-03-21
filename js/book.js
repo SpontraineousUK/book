@@ -1,13 +1,12 @@
-var book;
+var book,
+    deals = [];
 
-function DealPicker(d, ga, url) {
+function DealPicker(d, ga, destinations) {
     'use strict';
 
     var fullpage = {
-            anchors: ['splash', 'deals', 'places', 'daypicker', 'book']
+            anchors: ['splash', 'deals', 'places', 'daypicker', 'book', 'newsletter']
         },
-        destinationsDB = new Firebase('https://spontraineous.firebaseio.com/places'),
-        destinations = [],
         filters = d.forms.filter.elements;
 
     function initFilter() {
@@ -18,6 +17,22 @@ function DealPicker(d, ga, url) {
         control.value = day.toISOString().split('T')[0];
         day.setDate(day.getDate() + 3);
         control.setAttribute('max', day.toISOString().split('T')[0]);
+    }
+
+    function loadDestinations() {
+        var destinationsDB = new Firebase('https://spontraineous.firebaseio.com/places');
+        destinationsDB.once('value', function(snapshot) {
+          if (snapshot.val() === null) {
+            alert("Can't find any destinations. Please try later.");
+          } else {
+            destinations = [];
+            snapshot.forEach(function(destination) {
+                destinations.push(destination.val());
+                console.log(destination.val());
+            });
+            initPlaces(destinations);
+          }
+        });
     }
 
     function initMap() {
@@ -75,25 +90,18 @@ function DealPicker(d, ga, url) {
             map: map,
             title: 'Brighton £69'
         });
+
+        d.getElementById('deals').className = 'section';
     }
 
-    function initPlaces() {
-        destinationsDB.once('value', function(snapshot) {
-          if(snapshot.val() === null) {
-            alert("Can't find any destinations. Please try later.");
-          } else {
-            snapshot.forEach(function(destination) {
-                destinations.push(destination.val());
-                console.log(destination.val());
-            });
-            var template = d.getElementById("place-template").firstChild.textContent;
-            var context = {
-                destinations: destinations,
-            };
-            d.getElementById("places").innerHTML = Mark.up(template, context);
-            console.log("DONE");
-          }
-        });
+    function initPlaces(destinations) {
+        console.log('initPlaces with ' + destinations);
+        console.log(destinations);
+        var template = d.getElementById("place-template").firstChild.textContent;
+        var context = {
+            destinations: destinations,
+        };
+        d.getElementById("places").innerHTML = Mark.up(template, context);
     }
 
     function findTrips() {
@@ -102,8 +110,7 @@ function DealPicker(d, ga, url) {
 
     initFilter();
     initMap();
-    initPlaces();
-
+    loadDestinations();
 
     ga('send', 'event', 'Book', 'loaded', '', 0);
     return {
@@ -111,4 +118,5 @@ function DealPicker(d, ga, url) {
     };
 }
 
-book = new DealPicker(document, ga, 'http://www.spontraineous.co.uk/');
+book = new DealPicker(document, ga, deals);
+

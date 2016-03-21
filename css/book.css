@@ -70,6 +70,10 @@ section, article {
 	color: white;
 }
 
+.closed {
+	display: none;
+}
+
 .logo {
     padding: 1em 1.35em 1em 1em;
     font-size: 133%;
