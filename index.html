@@ -36,7 +36,9 @@
                     </label>
                     <label title="Departure date">
                         Depart:
-                        <input type="date" id="depart" title="Departure date">
+                        <select id="depart">
+                            <option selected value="-1">This week</option>
+                        </select>
                     </label>
                 </fieldset>
                 <fieldset>
@@ -140,7 +142,7 @@
             <section class="section closed" id="places">
             </section>
             <script id="place-template" type="text/template">
-              {{destinations}}
+              {{destinations|sort>price}}
                 <article class="slide" id="{{destinationid}}"
                     style="background-image: url('{{splashpictureurl}}')">
                     <div class="display">
@@ -181,8 +183,13 @@
                 <div class="display">
                     <h3>We'd like to keep in touch</h3>
                     <h6>
-                        We're busy negotiating deals for you now to the hidden gems of Britain, starting in the south and expanding to the whole of Britain over the summer. 
-                        If you'd like to know when we have something for you please like us on facebook and follow us on twitter:
+                        We're busy negotiating deals for you now to the hidden gems of Britain,
+                        starting from London at Easter with day-trips to the south-west.
+                    </h6>
+                    <h6>
+                        We'll expand to the whole of mainland Britain over the year.
+                        If you'd like to know when we have something to offer you from your local railway sation,
+                        please like us on facebook and follow us on twitter:
                     </h6>
                     <ul class="social_icons">
                         <li>

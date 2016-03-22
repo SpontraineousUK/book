@@ -22,13 +22,19 @@ function DealPicker(d, ga, destinations) {
     }
 
     function initFilter() {
-        var day = new Date();
-        var control = d.getElementById('depart');
-        control.setAttribute('min', day.toISOString().split('T')[0]);
-        day.setDate(day.getDate() + 1);
-        control.value = day.toISOString().split('T')[0];
-        day.setDate(day.getDate() + 3);
-        control.setAttribute('max', day.toISOString().split('T')[0]);
+        var day = new Date(),
+            control = d.getElementById('depart'),
+            format = {
+                weekday: 'long', day: 'numeric', month: 'short'
+            },
+            js;
+        for (var i = 7; i--; ) {
+            day.setDate(day.getDate() + 1);
+            js = d.createElement('option');
+            js.value = day.getDay();
+            js.innerHTML = day.toLocaleString('en-GB', format);
+            control.appendChild(js);
+        }
     }
 
     function loadDestinations() {
@@ -128,7 +134,8 @@ function DealPicker(d, ga, destinations) {
     ga('send', 'event', 'Book', 'loaded', '', 0);
     return {
         findTrips : findTrips,
-        go : go
+        go : go,
+        book : book
     };
 }
 

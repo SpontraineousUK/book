@@ -69,6 +69,12 @@ pre {
 section, article {
 	text-align: center;
 	background: no-repeat 0 0 fixed;
+	background-image: -ms-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-image: -moz-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-image: -o-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #2196F3), color-stop(1, #311B92));
+	background-image: -webkit-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+	background-color: #311B92;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -90,15 +96,6 @@ pre {
     font-size: 133%;
     color: #212121;
     text-align: center;
-}
-
-main {
-	background-image: -ms-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-image: -moz-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-image: -o-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #2196F3), color-stop(1, #311B92));
-	background-image: -webkit-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-color: #311B92;
 }
 
 input, select, textarea, form button, label {
@@ -164,9 +161,9 @@ a {
     padding: 0;
 }
 
-#splash {
+#splash, #newsletter {
     background-image: url('../img/tenby.jpg');
-    background-attachment: inherit;
+    background-attachment: scroll;
 }
 
 h2, h3, h6 {
