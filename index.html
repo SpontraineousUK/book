@@ -28,21 +28,21 @@
             <div class="logo">
                 <b>Spon</b>train<b>eous</b>
             </div>
-            <form name="filter" action="#deals">
+            <form onsubmit="return book.findTrips()">
                 <fieldset>
-                    <label title="Departure station">
+                    <label title="Where do you want to go from?">
                         From:
                         <input type="text" id="from" placeholder="Departure station">
                     </label>
-                    <label title="Departure date">
+                    <label title="What day do you want to go?">
                         Depart:
-                        <select id="depart">
+                        <select id="day">
                             <option selected value="-1">This week</option>
                         </select>
                     </label>
                 </fieldset>
                 <fieldset>
-                    <label class="col-5" title="Adults over 16">
+                    <label class="col-5" title="How many adults over 16?">
                         Adults:
                         <select id="adult">
                             <option value="0">0</option>
@@ -57,7 +57,7 @@
                         </select>
                     </label>
                     <span class="col-2"> </span>
-                    <label class="col-5" title="Children aged 5-15">
+                    <label class="col-5" title="How many children aged 5-15?">
                         Children:
                         <select id="child">
                             <option selected value="0">0</option>
@@ -86,7 +86,7 @@
                     </label>
                 </fieldset>
                 <fieldset>
-                    <button type="submit">Find trips</button>
+                    <button>Find trips</button>
                 </fieldset>
             </form>
             <fieldset>
@@ -168,7 +168,7 @@
               {{/destinations}}
             </script>
 
-            <section class="section closed" id="book">
+            <section class="section closed" id="detail">
             </section>
             <script id="book-template" type="text/template">
                 <div style="background-image: url('{{splashpictureurl}}')">
