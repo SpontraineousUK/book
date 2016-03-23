@@ -147,7 +147,7 @@ function DealPicker(d, ga, destinations) {
         go('newsletter');
     }
 
-    initFilter();
+//    initFilter();
 //    initMap();
     loadDestinations();
 
