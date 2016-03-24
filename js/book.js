@@ -13,13 +13,27 @@ function DealPicker(d, ga, destinations) {
         d.getElementById(section).className = 'section closed';
     }
     function open(section) {
-        d.getElementById(section).className = 'section';
+        var page = d.getElementById(section);
+        if (page)
+            page.className = 'section';
+        return page;
+    }
+    function page(section) {
+        if (!open(section))
+            return null;
+        fullpage.anchors.forEach(close);
+        return open(section);
     }
     function go(section) {
-        fullpage.anchors.forEach(close);
-        open(section);
-        window.location = '#' + section;
+        if (page(section))
+            window.location = '#' + section;
     }
+    function processHash() {
+        var hash = location.hash || '#';
+        if (!page(hash.slice(1)))
+            page('splash');
+    }
+    window.addEventListener('hashchange', processHash);
 
     function loadDestinations() {
         var destinationsDB = new Firebase('https://spontraineous.firebaseio.com/places');
