@@ -125,19 +125,24 @@ function DealPicker(d, ga, destinations) {
 
     function findTrips() {
         var from = d.getElementById('from').value;
-        var day = d.getElementById('day').value;
-        var adult = d.getElementById('adult').value;
-        var child = d.getElementById('child').value;
+        //var day = d.getElementById('day').value;
+        //var adult = d.getElementById('adult').value;
+        //var child = d.getElementById('child').value;
         var prefer = d.getElementById('prefer').value;
         console.log('Search for trips from ' + from);
         ga('send', 'event', 'Preference', 'from', from);
-        ga('send', 'event', 'Preference', 'day', day);
-        ga('send', 'event', 'Preference', 'adult', adult);
-        ga('send', 'event', 'Preference', 'child', child);
+        //ga('send', 'event', 'Preference', 'day', day);
+        //ga('send', 'event', 'Preference', 'adult', adult);
+        //ga('send', 'event', 'Preference', 'child', child);
         ga('send', 'event', 'Preference', 'prefer', prefer);
         // ToDo: specific search when we've more than one 'from' origin available
         go('places');
         return false;
+    }
+    function details(dealID) {
+        // to do
+        console.log(dealID);
+        console.log(destinations[dealID]);
     }
 
     function checkout(dealID) {
@@ -155,7 +160,8 @@ function DealPicker(d, ga, destinations) {
     return {
         findTrips : findTrips,
         go : go,
-        checkout : checkout
+        checkout : checkout,
+        details : details
     };
 }
 
