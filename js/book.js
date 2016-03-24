@@ -1,21 +1,20 @@
 var book,
     deals = [];
 
-function DealPicker(d, ga, destinations) {
+function Router(d, sec) {
     'use strict';
 
     var fullpage = {
             anchors: ['splash', 'deals', 'places', 'detail', 'newsletter']
-        },
-        filter = {};
+        };
 
     function close(section) {
-        d.getElementById(section).className = 'section closed';
+        d.getElementById(section).className = sec + ' closed';
     }
     function open(section) {
         var page = d.getElementById(section);
         if (page)
-            page.className = 'section';
+            page.className = sec;
         return page;
     }
     function page(section) {
@@ -33,7 +32,19 @@ function DealPicker(d, ga, destinations) {
         if (!page(hash.slice(1)))
             page('splash');
     }
+
     window.addEventListener('hashchange', processHash);
+
+    return {
+        go : go,
+        open : open
+    }
+}
+
+function DealPicker(d, ga, r, destinations) {
+    'use strict';
+
+    var filter = {};
 
     function loadDestinations() {
         var destinationsDB = new Firebase('https://spontraineous.firebaseio.com/places');
@@ -107,7 +118,7 @@ function DealPicker(d, ga, destinations) {
             title: 'Brighton £69'
         });
 
-        open('deals');
+        r.open('deals');
     }
 
     function initPlaces(destinations) {
@@ -118,7 +129,7 @@ function DealPicker(d, ga, destinations) {
             destinations: destinations,
         };
         d.getElementById('places').innerHTML = Mark.up(template, context);
-        open('places');
+        r.open('places');
     }
 
     function initFilter() {
@@ -150,7 +161,7 @@ function DealPicker(d, ga, destinations) {
         //ga('send', 'event', 'Preference', 'child', child);
         ga('send', 'event', 'Preference', 'prefer', prefer);
         // ToDo: specific search when we've more than one 'from' origin available
-        go('places');
+        r.go('places');
         return false;
     }
     function details(dealID) {
@@ -163,7 +174,7 @@ function DealPicker(d, ga, destinations) {
         // to do
         console.log(dealID);
         console.log(destinations[dealID]);
-        go('newsletter');
+        r.go('newsletter');
     }
 
 //    initFilter();
@@ -173,11 +184,9 @@ function DealPicker(d, ga, destinations) {
     ga('send', 'event', 'Book', 'loaded', '', 0);
     return {
         findTrips : findTrips,
-        go : go,
         checkout : checkout,
         details : details
     };
 }
 
-book = new DealPicker(document, ga, deals);
-
+book = new DealPicker(document, ga, new Router(document, 'section'), deals);
