@@ -38,7 +38,7 @@ function Router(d, sec) {
     return {
         go : go,
         open : open
-    }
+    };
 }
 
 function DealPicker(d, ga, r, destinations) {

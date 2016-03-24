@@ -92,9 +92,16 @@ pre {
 }
 
 .logo {
-    padding: 1em 1.35em 1em 1em;
+    margin: 1em 1.25em 0.5em 1em;
     font-size: 133%;
-    color: #212121;
+}
+.strapline {
+	margin: 0.5em 0.2em 1em 0;
+	font-size: 90%;
+}
+
+.logo, .strapline {
+    color: #0e2220;
     text-align: center;
 }
 
@@ -121,8 +128,8 @@ fieldset {
 }
 
 button, button a {
-	text-decoration: none;
-	color: #FFF;
+	text-decoration: inherit;
+	color: white;
 	opacity: 1;
 	text-align: center;
 	letter-spacing: 0.8px;
@@ -142,13 +149,12 @@ button, button a {
 	background-clip: padding-box;
 	line-height: 2.57rem;
 	border: none;
-	background-color: #2196F3;
+	background-color: #a61a23;
 }
 
 a {
-	text-decoration: none;
-	color: #FFF;
-/*	opacity: 0.5; */
+	text-decoration: inherit;
+	color: inherit;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
