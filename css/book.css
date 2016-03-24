@@ -6,23 +6,6 @@ body, input, select, textarea, button, pre {
     line-height: 1.3;
     margin: 0;
     padding: 0;
-
-    /* Avoid flicker on slides transitions for mobile phones #336 */
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-pre {
-	white-space: pre-wrap;       /* css-3 */
-	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-	white-space: -pre-wrap;      /* Opera 4-6 */
-	white-space: -o-pre-wrap;    /* Opera 7 */
-	word-wrap: break-word;       /* Internet Explorer 5.5+ */
-}
-
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 @media screen {
@@ -83,10 +66,6 @@ section, article {
     text-shadow: 0 0 0.7rem black, 0 0 0.2rem black;
 }
 
-pre {
-	padding: 1em;
-}
-
 .closed {
 	display: none;
 }
@@ -99,32 +78,39 @@ pre {
 	margin: 0.5em 0.2em 1em 0;
 	font-size: 90%;
 }
-
 .logo, .strapline {
     color: #0e2220;
     text-align: center;
 }
 
+pre {
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	padding: 1em;
+}
+
 input, select, textarea, form button, label {
-	width: 100%;
+ 	width: 100%;
+}
+
+input, select, textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 5px;
+	vertical-align: middle;
+	padding: 0.1em;
+	border: 1px #D2D6DF solid;
+	font-size: 100%;
+	height: 1.8em;
+	background: white;
 }
 
 fieldset {
 	border: 0;
-}
-
-.col-2, .col-5 {
-	float: left;
-	position: relative;
-	min-height: 1px;
-}
-
-.col-2 {
-	width: 16.66666667%;
-}
-
-.col-5 {
-	width: 41.66666667%;
 }
 
 button, button a {
@@ -143,9 +129,9 @@ button, button a {
 	height: 2.57rem;
 	margin-bottom: 15px;
 	padding: 0 1.5rem;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 	background-clip: padding-box;
 	line-height: 2.57rem;
 	border: none;
@@ -159,6 +145,20 @@ a {
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
+}
+
+.col-2, .col-5 {
+	float: left;
+	position: relative;
+	min-height: 1px;
+}
+
+.col-2 {
+	width: 16.66666667%;
+}
+
+.col-5 {
+	width: 41.66666667%;
 }
 
 #map-canvas {
