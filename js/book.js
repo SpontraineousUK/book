@@ -128,7 +128,7 @@ function DealPicker(d, ga, r, destinations) {
         var context = {
             destinations: destinations,
         };
-        d.getElementById('places').innerHTML = Mark.up(template, context);
+        d.getElementById('places-gallery').innerHTML = Mark.up(template, context);
         r.open('places');
     }
 

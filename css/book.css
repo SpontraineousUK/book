@@ -38,10 +38,12 @@ body, input, select, textarea, button, pre {
 	}
 	main {
 		margin-left: 15em;
+	    background-image: url('../img/tenby.jpg');
+	    background-attachment: scroll;
 	}
 }
 
-@media print, screen and (min-width: 72em) {
+@media print, screen and (min-width: 9972em) {
 	.display {
 		margin: 0 25%;
 		vertical-align: middle;
@@ -49,7 +51,7 @@ body, input, select, textarea, button, pre {
 	}
 }
 
-section, article {
+main {
 	text-align: center;
 	background: no-repeat 0 0 fixed;
 	background-image: -ms-linear-gradient(top left, #2196F3 0%, #311B92 100%);
@@ -72,14 +74,15 @@ section, article {
 
 .logo {
     margin: 1em 1.25em 0.5em 1em;
-    font-size: 133%;
+    font-size: 1.33em;
 }
 .strapline {
 	margin: 0.5em 0.2em 1em 0;
-	font-size: 90%;
+	font-size: 0.9em;
 }
 .logo, .strapline {
     color: #0e2220;
+	letter-spacing: -0.04em;
     text-align: center;
 }
 
@@ -167,14 +170,21 @@ a {
     padding: 0;
 }
 
-#splash, #newsletter {
-    background-image: url('../img/tenby.jpg');
-    background-attachment: scroll;
+.title, .price {
+	font-weight: 300;
+	letter-spacing: -0.13rem;
+	font-size: 2.8rem;
+	margin: 0.33em 0;
+	line-height: 1.05;
+}
+.title {
+	min-height: 6rem;
 }
 
+
 h2, h3, h6 {
-	margin: 1.72rem 0;
-	padding: 0;
+	padding: 1.72rem 0;
+	margin: 0;
 }
 h2 {
 	opacity: 0.8;
@@ -198,6 +208,28 @@ h6 {
 	line-height: 1.5;
 }
 
+.gallery {
+	text-align: center;
+	list-style: none;
+	padding: 1em;
+	margin: 0;
+}
+.gallery li {
+	display: inline-block;
+	list-style: none;
+	padding: 0;
+	margin: 1em;
+	width: 18em;
+	height: 18em;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	color: white;
+    text-shadow: 0 0 0.7em black, 0 0 0.2em black;
+}
 
 .social_icons, .social_icons li {
 	display: inline-block;

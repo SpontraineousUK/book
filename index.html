@@ -126,11 +126,10 @@
             <section class="section" id="splash">
                 <div class="display">
                     <h2><b>Spon</b>train<b>eous</b></h2>
-                    <h3>Last minute adventures by rail</h3>
-                    <h6>
+                    <p>
                         Each week we&rsquo;ll hand-pick new destinations for you to discover.
                         We&rsquo;re starting from London with day-trips in April:
-                    </h6>
+                    </p>
                 </div>
             </section>
 
@@ -139,19 +138,19 @@
             </section>
 
             <section class="section closed" id="places">
+              <ul class="gallery" id="places-gallery">
+              </ul>
             </section>
             <script id="place-template" type="text/template">
               {{destinations|sort>price}}
-                <article class="slide" id="{{destinationid}}"
-                    style="background-image: url('{{splashpictureurl}}')">
-                    <div class="display">
-                        <h2>£<b>{{price}}</b></h2>
-                        <h2>{{destinationname}}</h2>
-                        <h6>{{audiences}}</h6>
+                <li style="background-image: url('{{splashpictureurl}}')">
+                        <p class="price">£<b>{{price}}</b></p>
+                        <p class="title">{{destinationname}}</p>
+                        <p>{{audiences}}</p>
                         <button onclick="book.details({{destinationid}})">
                             Find out more
                         </button>
-                    </div>
+                </li>
               {{/destinations}}
             </script>
 
