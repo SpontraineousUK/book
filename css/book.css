@@ -24,6 +24,21 @@ body, input, select, textarea, button, pre {
 	    /* IE 11 on Windows Phone 8.1*/
 	    touch-action: none;
 	}
+	main {
+		color: white;
+		text-align: center;
+		padding: 0 1.5%;
+		background: #311B92 center scroll;
+		background-image: -ms-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+		background-image: -moz-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+		background-image: -o-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+		background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #2196F3), color-stop(1, #311B92));
+		background-image: -webkit-linear-gradient(top left, #2196F3 0%, #311B92 100%);
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;	
+	}
 }
 
 @media print, screen and (min-width: 36em) {
@@ -39,7 +54,7 @@ body, input, select, textarea, button, pre {
 	main {
 		margin-left: 15em;
 	    background-image: url('../img/tenby.jpg');
-	    background-attachment: scroll;
+	    text-shadow: 0 0 0.7rem black, 0 0 0.2rem black;
 	}
 }
 
@@ -49,23 +64,6 @@ body, input, select, textarea, button, pre {
 		vertical-align: middle;
 		padding: 6em 0 1em 0;
 	}
-}
-
-main {
-	text-align: center;
-	background: no-repeat 0 0 fixed;
-	background-image: -ms-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-image: -moz-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-image: -o-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #2196F3), color-stop(1, #311B92));
-	background-image: -webkit-linear-gradient(top left, #2196F3 0%, #311B92 100%);
-	background-color: #311B92;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;	
-	color: white;
-    text-shadow: 0 0 0.7rem black, 0 0 0.2rem black;
 }
 
 .closed {
@@ -178,7 +176,7 @@ a {
 	line-height: 1.05;
 }
 .title {
-	min-height: 6rem;
+	height: 6rem;
 }
 
 
@@ -202,25 +200,25 @@ h3 {
 }
 h6 {
 	opacity: 1;
-	font-weight: 500;
+	font-weight: 300;
 	letter-spacing: 0.02rem;
-	font-size: 1rem;
+	font-size: 1.33rem;
 	line-height: 1.5;
 }
 
 .gallery {
 	text-align: center;
 	list-style: none;
-	padding: 1em;
+	padding: 0;
 	margin: 0;
 }
 .gallery li {
 	display: inline-block;
 	list-style: none;
 	padding: 0;
-	margin: 1em;
-	width: 18em;
-	height: 18em;
+	margin: 0.8rem;
+	width: 18rem;
+	height: 18rem;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -229,6 +227,7 @@ h6 {
 	text-align: center;
 	color: white;
     text-shadow: 0 0 0.7em black, 0 0 0.2em black;
+	font-size: 120%;
 }
 
 .social_icons, .social_icons li {
