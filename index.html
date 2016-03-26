@@ -2,8 +2,8 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
     <meta charset="UTF-8" />
-    <title>Spontraineous last-minute adventures by rail</title>
-    <meta name="description" content="Last-minute short break bargain deals by train" />
+    <title>Spontraineous last minute adventures by rail</title>
+    <meta name="description" content="Last minute short break bargain deals by train" />
     <meta name="keywords" content="last minute train deals leisure city countryside seaside family party break" />
     <link rel="canonical" href="http://www.spontraineous.co.uk/" />
     <meta property="og:image" content="http://www.spontraineous.co.uk/img/tenby.jpg" />
@@ -26,7 +26,6 @@
                 <fieldset>
                     <label title="Where do you want to go from?">
                         From:
-                        <!--input type="text" id="from" placeholder="Departure station"-->
                         <select id="from">
                             <option disabled value="BRI">Bristol</option>
                             <option disabled value="CDF">Cardiff</option>
@@ -36,20 +35,25 @@
                             <option disabled value="SOU">Southampton</option>
                         </select>
                     </label>
-                    <label title="We'll find the perfect destination for you">
+                    <label title="What kind of break are you looking for?">
                         To:
-                        <div>
-                            <i>&nbsp;Adventure</i>
-                        </div>
+                        <select id="prefer">
+                            <option selected value="all">Surprise me</option>
+                            <option value="city">City break</option>
+                            <option value="country">Countryside</option>
+                            <option value="sea">Seaside</option>
+                            <option value="kids">Good for kids</option>
+                            <option value="adult">Party town</option>
+                        </select>
                     </label>
-                    <label title="What day do you want to go?" style="display:none">
+                    <label class="closed" title="What day do you want to go?">
                         Departing:
                         <select id="day">
                             <option selected value="-1">This week</option>
                         </select>
                     </label>
                 </fieldset>
-                <fieldset style="display:none">
+                <fieldset class="closed">
                     <label class="col-5" title="How many adults over 16?">
                         Adults:
                         <select id="adult">
@@ -81,20 +85,7 @@
                     </label>
                 </fieldset>
                 <fieldset>
-                    <label title="What kind of break are you looking for?">
-                        Type of holiday:
-                        <select id="prefer">
-                            <option selected value="all">Surprise me</option>
-                            <option value="city">City break</option>
-                            <option value="country">Countryside</option>
-                            <option value="sea">Seaside</option>
-                            <option value="kids">Good for kids</option>
-                            <option value="adult">Party town</option>
-                        </select>
-                    </label>
-                </fieldset>
-                <fieldset>
-                    <button>Find trips</button>
+                    <button>Filter trips</button>
                 </fieldset>
             </form>
             <fieldset>
@@ -124,14 +115,12 @@
 
         <main>
             <section class="section" id="splash">
-                <div class="display">
-                    <h2>This week&rsquo;s <b>Spon</b>train<b>eous</b> adventures</h2>
-                    <h6>
-                        Each week we&rsquo;ll hand-pick new destinations for you to discover.
-                        <br />
-                        We&rsquo;re starting from London with day-trips in April:
-                    </h6>
-                </div>
+                <h2>This week&rsquo;s <b>Spon</b>train<b>eous</b> adventures</h2>
+                <h6>
+                    Each week we&rsquo;ll hand-pick new destinations for you to discover.
+                    <br />
+                    We&rsquo;re starting from London with day-trips in April:
+                </h6>
             </section>
 
             <section class="section closed" id="deals">
@@ -148,7 +137,7 @@
                         <p class="price">£<b>{{price}}</b></p>
                         <p class="title">{{destinationname}}</p>
                         <p>{{audiences}}</p>
-                        <button onclick="book.details('{{destinationid}}')">
+                        <button class="cta" onclick="book.details('{{destinationid}}')">
                             Find out more
                         </button>
                 </li>
@@ -159,52 +148,46 @@
             </section>
             <script id="book-template" type="text/template">
                 <div style="background-image: url('{{splashpictureurl}}')">
-                    <div class="display">
-                        <h2>£<b>{{price}}</b></h2>
-                        <h2>{{destinationname}}</h2>
-                        <h6>{{splashtext}}</h6>
-                        <button onclick="book.checkout('{{destinationid}}')">
-                            Book now
-                        </button>
-                    </div>
-                <div class="detail">
-                        <h3>{{section1title}}</h3>
-                        <pre xstyle="background-image: url('{{section1imageurl}}')">{{section1text}}</pre>
-                        <h3>{{section2title}}</h3>
-                        <pre>{{section2text}}</pre>
-                        <h3>{{section3title}}</h3>
-                        <pre>{{section3text}}</pre>
-                        <button onclick="book.checkout('{{destinationid}}')">
-                            Book now
-                        </button>
-                    </div>
+                    <h2>£<b>{{price}}</b></h2>
+                    <h2>{{destinationname}}</h2>
+                    <h6>{{splashtext}}</h6>
+                    <button onclick="book.checkout('{{destinationid}}')">
+                        Book now
+                    </button>
+                    <h3>{{section1title}}</h3>
+                    <pre xstyle="background-image: url('{{section1imageurl}}')">{{section1text}}</pre>
+                    <h3>{{section2title}}</h3>
+                    <pre>{{section2text}}</pre>
+                    <h3>{{section3title}}</h3>
+                    <pre>{{section3text}}</pre>
+                    <button onclick="book.checkout('{{destinationid}}')">
+                        Book now
+                    </button>
                 </div>
             </script>
 
             <section class="section" id="newsletter">
-                <div class="display">
-                    <h2>We&rsquo;d like to keep in touch</h2>
-                    <h6>
-                        We're working with our rail partners and Visit Britain
-                        negotiating great value deals for you to our country's hidden gems.
-                        We start from London with day-trips to the south-west and
-                        we'll expand to the whole of mainland Britain over the year.
-                        If you'd like to know when we have something to offer you from your local railway sation,
-                        please like us on facebook and follow us on twitter:
-                    </h6>
-                    <ul class="social_icons">
-                        <li>
-                            <a href="https://www.facebook.com/SpontraineousUK" target="_blank">
-                                <img src="img/facebook40x40.png" alt="facebook" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/SpontraineousUK" target="_blank">
-                                <img src="img/twitter40x40.png" alt="twitter" />
-                            </a>
-                        </li>
-                   </ul>
-                </div>
+                <h2>We&rsquo;d like to keep in touch</h2>
+                <h6>
+                    We're working with our rail partners and Visit Britain
+                    negotiating great value deals for you to our country's hidden gems.
+                    We start from London with day-trips to the south-west and
+                    we'll expand to the whole of mainland Britain over the year.
+                    If you'd like to know when we have something to offer you from your local railway sation,
+                    please like us on facebook and follow us on twitter:
+                </h6>
+                <ul class="social_icons">
+                    <li>
+                        <a href="https://www.facebook.com/SpontraineousUK" target="_blank">
+                            <img src="img/facebook40x40.png" alt="facebook" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/SpontraineousUK" target="_blank">
+                            <img src="img/twitter40x40.png" alt="twitter" />
+                        </a>
+                    </li>
+               </ul>
             </section>
 
         </main>

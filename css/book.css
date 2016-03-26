@@ -58,14 +58,6 @@ body, input, select, textarea, button, pre {
 	}
 }
 
-@media print, screen and (min-width: 9972em) {
-	.display {
-		margin: 0 25%;
-		vertical-align: middle;
-		padding: 6em 0 1em 0;
-	}
-}
-
 .closed {
 	display: none;
 }
@@ -119,6 +111,7 @@ button, button a {
 	color: white;
 	opacity: 1;
 	text-align: center;
+	font-size: 1rem;
 	letter-spacing: 0.8px;
 	-webkit-transition: all 650ms ease;
 	-moz-transition: all 650ms ease;
@@ -128,7 +121,7 @@ button, button a {
 	cursor: pointer;
 	display: inline-block;
 	height: 2.57rem;
-	margin-bottom: 15px;
+	margin-bottom: 1rem;
 	padding: 0 1.5rem;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -136,6 +129,10 @@ button, button a {
 	background-clip: padding-box;
 	line-height: 2.57rem;
 	border: none;
+	background-color: #2980b9;
+}
+
+button.cta {
 	background-color: #a61a23;
 }
 
