@@ -134,12 +134,12 @@
             <script id="place-template" type="text/template">
               {{destinations|sort>price}}
                 <li style="background-image: url('{{splashpictureurl}}')">
-                        <p class="price">£<b>{{price}}</b></p>
-                        <p class="title">{{destinationname}}</p>
-                        <p>{{audiences}}</p>
-                        <button class="cta" onclick="book.details('{{destinationid}}')">
-                            Find out more
-                        </button>
+                    <p class="price">£<b>{{price}}</b></p>
+                    <p class="title">{{destinationname}}</p>
+                    <p>Saturday</p>
+                    <button class="cta" onclick="book.details('{{destinationid}}')">
+                        Find out more
+                    </button>
                 </li>
               {{/destinations}}
             </script>
@@ -151,7 +151,7 @@
                     <h2>£<b>{{price}}</b></h2>
                     <h2>{{destinationname}}</h2>
                     <h6>{{splashtext}}</h6>
-                    <button onclick="book.checkout('{{destinationid}}')">
+                    <button class="cta" onclick="book.checkout('{{destinationid}}')">
                         Book now
                     </button>
                     <h3>{{section1title}}</h3>
@@ -160,7 +160,7 @@
                     <pre>{{section2text}}</pre>
                     <h3>{{section3title}}</h3>
                     <pre>{{section3text}}</pre>
-                    <button onclick="book.checkout('{{destinationid}}')">
+                    <button class="cta" onclick="book.checkout('{{destinationid}}')">
                         Book now
                     </button>
                 </div>
