@@ -4,7 +4,7 @@ function Router(d, sec) {
     'use strict';
 
     var fullpage = {
-            anchors: ['splash', 'deals', 'places', 'detail', 'newsletter']
+            anchors: ['splash', 'deals', 'places', 'detail', 'newsletter', 'aboutus']
         };
 
     function close(section) {
@@ -33,6 +33,7 @@ function Router(d, sec) {
     }
 
     window.addEventListener('hashchange', processHash);
+    window.addEventListener('load', processHash);
 
     return {
         go : go,

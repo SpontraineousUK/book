@@ -175,6 +175,9 @@ a {
 .title {
 	height: 6rem;
 }
+.phonetics {
+	font-weight: 500;
+}
 .links {
 	clear: both;
 	text-align: center;
