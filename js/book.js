@@ -1,5 +1,4 @@
-var book,
-    deals = [];
+var book;
 
 function Router(d, sec) {
     'use strict';
@@ -41,10 +40,18 @@ function Router(d, sec) {
     };
 }
 
-function DealPicker(d, ga, r, destinations) {
+function DealPicker(d, ga, r) {
     'use strict';
 
+    var destinations = [];
     var filter = {};
+
+    function selectDest(id) {
+      for (var i=0, iLen=destinations.length; i<iLen; i++) {
+
+        if (destinations[i].destinationid == id) return destinations[i];
+      }
+    }
 
     function loadDestinations() {
         var destinationsDB = new Firebase('https://spontraineous.firebaseio.com/places');
@@ -167,13 +174,18 @@ function DealPicker(d, ga, r, destinations) {
     function details(dealID) {
         // to do
         console.log(dealID);
-        console.log(destinations[dealID]);
+        console.log(destinations);
+        console.log(selectDest(dealID));
+        var template = d.getElementById('detail-template').firstChild.textContent;
+        d.getElementById('detail').innerHTML = Mark.up(template, selectDest(dealID));
+        r.go('detail');
+        ga('send', 'event', 'Browse', 'details', dealID, 0);
     }
 
     function checkout(dealID) {
         // to do
         console.log(dealID);
-        console.log(destinations[dealID]);
+        console.log(destinations);
         r.go('newsletter');
     }
 
@@ -189,4 +201,4 @@ function DealPicker(d, ga, r, destinations) {
     };
 }
 
-book = new DealPicker(document, ga, new Router(document, 'section'), deals);
+book = new DealPicker(document, ga, new Router(document, 'section'));
