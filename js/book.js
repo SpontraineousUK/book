@@ -4,7 +4,7 @@ function Router(d, sec) {
     'use strict';
 
     var fullpage = {
-            anchors: ['splash', 'deals', 'places', 'detail', 'newsletter', 'aboutus']
+            anchors: ['splash', 'deals', 'places', 'detail', 'newsletter', 'aboutus', 'faqs']
         };
 
     function close(section) {
