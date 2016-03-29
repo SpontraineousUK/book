@@ -4,7 +4,7 @@ function Router(d, sec) {
   'use strict';
 
   var fullpage = {
-    anchors: ['deals', 'places', 'detail', 'aboutus', 'faqs']
+    anchors: ['deals', 'places', 'detail', 'book', 'aboutus', 'faqs']
   };
 
   function close(section) {
@@ -178,10 +178,10 @@ function DealPicker(d, ga, r) {
   }
 
   function checkout(dealID) {
-    // to do
-    console.log(dealID);
-    console.log(destinations);
-    r.go('newsletter');
+    var template = d.getElementById('book-template').firstChild.textContent;
+    d.getElementById('book').innerHTML = Mark.up(template, selectDest(dealID));
+    r.go('book');
+    ga('send', 'event', 'Browse', 'book', dealID, 0);
   }
 
 //  initFilter();

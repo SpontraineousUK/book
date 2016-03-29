@@ -93,7 +93,7 @@
       </form>
       <fieldset>
         <div>
-          Each week we&rsquo;ll take you to the pick of Britain&rsquo;s hidden gems with our partners Great Western Railway and Visit Britain. Like us on facebook and follow us on twitter to keep up-to-date with our launch in April.
+          Each week we&rsquo;ll take you to the pick of Britain&rsquo;s hidden gems with our rail partners and Visit Britain. Like us on facebook and follow us on twitter to keep up-to-date with our launch this summer.
         </div>
         <p class="fb-like" data-href="https://www.facebook.com/SpontraineousUK" data-share="true" data-layout="button_count" data-width="100%" data-show-faces="false">
           fb.com/SpontraineousUK
@@ -129,7 +129,7 @@
               <p class="price">£<b>{{price}}</b></p>
               <p class="title">{{destinationname}}</p>
               <p>Saturday</p>
-              <button class="cta" onclick="book.details('{{destinationid}}')">
+              <button class="cta" onclick="book.checkout('{{destinationid}}')">
                 Find out more
               </button>
             </li>
@@ -139,11 +139,12 @@
           <h6>
             We're working with our rail partners and Visit Britain
             negotiating great value deals for you to our country's hidden gems.
-            We start from London with day-trips to the south-west and
-            we'll expand to the whole of mainland Britain over the year.
+            We hope to start from London with day-trips in the summer and
+            then expand to the whole of mainland Britain.
             If you'd like to know when we have something to offer you
             from your local railway sation,
-            please like us on facebook and follow us on twitter.
+            please like us on facebook, follow us on twitter and let us know
+            where you'd like us to take you next.
           </h6>
           <div class="links">
             <ul class="foot-links">
@@ -195,6 +196,13 @@
               Book now
             </button>
           </div>
+        </div>
+      </script>
+      <section class="section closed" id="book">
+      </section>
+      <script id="book-template" type="text/template">
+        <div xclass="back-light">
+            <iframe src="{{bookingurl}}" frameborder="0" height="1000" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
         </div>
       </script>
       <section class="section closed" id="faqs">
@@ -319,9 +327,8 @@
       </section>
       <footer class="links">
         <ul class="foot-links">
-          <li>Help!</li>
-          <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#aboutus">About Us</a></li>
+          <li><a href="#faqs">Help!</a></li>
+          <li><a href="#aboutus">About <b>Spon</b>train<b>eous</b></a></li>
         </ul>
       </footer>
     </div>
